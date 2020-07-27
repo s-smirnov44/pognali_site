@@ -18,3 +18,8 @@ testWebP(function (support) {
 });
 
 /*===========*******************************************************************************************==========*/
+
+
+document.querySelector('.menu__btn').onclick = function () {
+  this.classList.toggle('menu__btn-active')
+}

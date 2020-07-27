@@ -31,7 +31,8 @@
     "gulp-webp-css": "^1.1.0",
     "gulp-webp-html": "^1.0.2",
     "gulp-webpcss": "^1.1.1",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "node-sass": "^4.14.1"
   },
   "dependencies": {
     "imagemin-jpeg-recompress": "^7.0.0",

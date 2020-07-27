@@ -1,1 +1,2 @@
-body{background:#000}header{background:url(../img/dest/123.jpg) no-repeat}@supports (-webkit-appearance:none){header{background:url(../img/dest/123.webp) no-repeat}}
+
+html{-webkit-box-sizing:border-box;box-sizing:border-box}*,::after,::before{-webkit-box-sizing:inherit;box-sizing:inherit}body{min-width:320px;overflow-x:hidden}.container{padding:0 25px}.header{background:url(../img/dest/globe-back-mobile@1x.jpg) no-repeat}.header__inner{min-height:478px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}@supports (-webkit-appearance:none){.header{background:url(../img/dest/globe-back-mobile@1x.webp) no-repeat}}

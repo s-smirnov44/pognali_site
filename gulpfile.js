@@ -158,46 +158,47 @@ function startwatch() {
 
 //Работа со шрифтами
 {
-  // Fonts || Шрифты из woff to woff2
+  // Fonts || Шрифты из ttf to woff, woff2
   function fonts() {
-    src('src/fonts')
+    src('src/fonts/')
       .pipe(ttf2woff())
-      .pipe(dest('src/fonts'));
-    return src('src/fonts')
+      .pipe(dest('src/fonts/'));
+    return src('src/fonts/')
       .pipe(ttf2woff2())
-      .pipe(dest('src/fonts'));
+      .pipe(dest('src/fonts/'));
   }
   // Fonts || Шрифты из otf to ttf
   task('otf2ttf', function () {
     return src('src/fonts/*.otf') // откуда берем
-    pipe(fonter({
-      formats: ['ttf'] // формат, который хотим получить
-    }))
-    pipe(dest('src/fonts/'))
+      .pipe(fonter({
+        formats: ['ttf'] // формат, который хотим получить
+      }))
+      .pipe(dest('src/fonts/'))
   })
 
-  function fontsStyle(params) {
+  //   function fontsStyle(params, done) { // добавляет шрифты в fonts.scss
 
-    let file_content = fs.readFileSync(source_folder + '/scss/fonts.scss');
-    if (file_content == '') {
-      fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
-      return fs.readdir(path.build.fonts, function (err, items) {
-        if (items) {
-          let c_fontname;
-          for (var i = 0; i < items.length; i++) {
-            let fontname = items[i].split('.');
-            fontname = fontname[0];
-            if (c_fontname != fontname) {
-              fs.appendFile(source_folder + '/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
-            }
-            c_fontname = fontname;
-          }
-        }
-      })
-    }
-  }
+  //     let file_content = fs.readFileSync('src/scss/fonts.scss');
+  //     if (file_content == '') {
+  //       fs.writeFile('src/scss/fonts.scss', '', cb);
+  //       return fs.readdir('src/fonts', function (items) {
+  //         if (items) {
+  //           let c_fontname;
+  //           for (var i = 0; i < items.length; i++) {
+  //             let fontname = items[i].split('.');
+  //             fontname = fontname[0];
+  //             if (c_fontname != fontname) {
+  //               fs.appendFile('src/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
+  //             }
+  //             c_fontname = fontname;
+  //           }
+  //         }
+  //       })
+  //     }
+  //     done()
+  //   }
 
-  function cb() { }
+  //   function cb() { }
 
 }
 
@@ -225,14 +226,16 @@ exports.styles = styles;
 exports.images = images;
 exports.html = html;
 exports.svgSprite = svgSprite;
+exports.cleandist = cleandist;
 exports.fonts = fonts;
+
 
 exports.cleanimg = cleanimg;
 
 // Собираем проект через 'gulp build'
-exports.build = series(cleandist, styles, scripts, images, buildcopy, html, fonts);
+exports.build = series(cleandist, parallel(styles, scripts, images, html, fonts, buildcopy));
 
 // Режим разработчика через 'gulp'
-exports.default = parallel(styles, scripts, html, svgSprite, startwatch, browsersync);
+exports.default = parallel(styles, scripts, html, fonts, svgSprite, startwatch, browsersync);
 
 // Запусти gulp svgIcons и все твои иконки *.svg из src/img/src/ сформируются в src/img/dest/icons.svg || cпрайты || sprites
