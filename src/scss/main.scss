@@ -44,9 +44,52 @@ body {
   overflow-x: hidden;
 }
 
+/************  Общие стили ************/
+
 .container {
   padding: 0 25px;
 }
+
+h3 {
+  color: #ff8d30;
+  font-family: "Blogger Sans";
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+.btn {
+  display: flex;
+  padding-left: 24px;
+  width: 270px;
+  color: #1d2e5b;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-radius: 10px;
+  border: none;
+  position: relative;
+}
+.btn::after {
+  width: 15px;
+  height: 20px;
+  background-color: #1d2e5b;
+  content: "";
+  position: absolute;
+  top: 25px;
+  right: 23px;
+  background: url("../img/dest/icons.svg#triangle-arrow-right") no-repeat;
+}
+
+/************  /Общие стили ************/
 
 /***********    header     ***********/
 
@@ -205,10 +248,8 @@ body {
     padding-top: 50px;
     padding-left: 50px;
     color: #fff;
-    font-size: 16px;
+
     &__text {
-      font-weight: 300;
-      line-height: 22px;
       width: 148px;
     }
     &__autor {
@@ -222,3 +263,243 @@ body {
 }
 
 /***********    /delight     ***********/
+
+/***********    about     ***********/
+
+.about {
+  background: #192144 url("../img/dest/about-mobile@1x.webp") no-repeat; // если вставить png, то gulp webp перекроет png и bg-position перестает работать
+  background-position: bottom;
+  border-radius: 0 0 30px 30px;
+
+  .choice {
+    width: 270px;
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 25px;
+    display: block;
+    &__card {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 18px;
+      padding-left: 25px;
+      padding-top: 23px;
+      padding-bottom: 40px;
+      margin-top: -25px;
+      position: relative;
+    }
+    &__card-text {
+      color: #161c35;
+    }
+    &__card-number {
+      color: #fff;
+      position: absolute;
+      top: 23px;
+      right: 23px;
+    }
+    &__card:first-child {
+      border-radius: 10px 10px 0 0;
+      background-color: #ff8d30;
+    }
+    &__card-text:nth-child(1) {
+      width: 140px;
+    }
+    &__card:nth-child(2) {
+      border-radius: 10px 10px 0 0;
+      background-color: #ffa530;
+    }
+    &__card-text:nth-child(2) {
+      width: 149px;
+    }
+    &__card:nth-child(3) {
+      border-radius: 10px 10px 0 0;
+      background-color: #ffbd30;
+    }
+    &__card-text:nth-child(3) {
+      width: 136px;
+    }
+    &__card:last-child {
+      border-radius: 10px;
+      background-color: #ffd74b;
+
+      padding-bottom: 25px;
+    }
+    &__card-text:last-child {
+      width: 120px;
+    }
+  }
+  .about__description {
+    padding-top: 300px;
+    padding-bottom: 84px;
+    margin-left: 50px;
+    position: relative;
+  }
+  .about__description-title {
+    padding-bottom: 23px;
+  }
+  .about__description-text {
+    color: #fff;
+  }
+  .about__description-text p:nth-child(1) {
+    width: 213px;
+  }
+  .about__description-text p:nth-child(2) {
+    padding-top: 25px;
+    font-weight: 700;
+    width: 204px;
+  }
+}
+
+/***********    /about     ***********/
+
+/***********    route     ***********/
+
+.route {
+  border-radius: 0 0 30px 30px;
+  background-color: #edeff6;
+  padding-bottom: 10px;
+  &__descriptrion {
+    padding-top: 72px;
+    margin: 0 auto;
+    width: 193px;
+    &-title {
+      margin-bottom: 23px;
+    }
+    &-text {
+      padding-bottom: 66px;
+      color: #444444;
+    }
+  }
+
+  .tours {
+    margin: 0 auto;
+    width: 270px;
+
+    .card {
+      position: relative;
+      margin-bottom: 10px;
+
+      .card-background-inner {
+        width: 270px;
+        height: 110px;
+        border-radius: 10px 10px 0 0;
+      }
+
+      &:nth-child(3) > .card-info {
+        box-shadow: inset 0 -74px 26px -26px rgb(237, 239, 246);
+      }
+      // Фото на карточке
+      &:nth-child(1) > div.card-background-inner {
+        background: url("../img/dest/thailand-mobile@1x.jpg");
+      }
+      &:nth-child(2) > div.card-background-inner {
+        background: url("../img/dest/france-mobile@1x.jpg");
+      }
+      &:nth-child(3) > div.card-background-inner {
+        background: url("../img/dest/czech-mobile@1x.jpg");
+      }
+      // Флаги на карточке
+      &:nth-child(1) > .card-info > .card-info__flag {
+        background: url("../img/dest/icons.svg#flag-thailand") no-repeat;
+      }
+
+      &:nth-child(2) > .card-info > .card-info__flag {
+        background: url("../img/dest/icons.svg#flag-france") no-repeat;
+      }
+
+      &:nth-child(3) > .card-info > .card-info__flag {
+        background: url("../img/dest/icons.svg#flag-czech") no-repeat;
+      }
+
+      .card-info {
+        border-radius: 10px;
+        background-color: #ffffff;
+        margin-top: -10px;
+        position: relative;
+        &__title {
+          color: #161c35;
+          font-size: 21px;
+          font-weight: 700;
+          line-height: 21px;
+          padding-left: 24px;
+          padding-top: 28px;
+          padding-bottom: 2px;
+        }
+        &__text {
+          opacity: 0.3;
+          color: #444444;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 18px;
+          padding-left: 24px;
+          padding-bottom: 44px;
+        }
+        &__score {
+          opacity: 0.3;
+          color: #444444;
+          font-size: 20px;
+          font-weight: 500;
+          line-height: 30px;
+          text-transform: uppercase;
+          position: absolute;
+          top: 31px;
+          right: 26px;
+        }
+        &__score:before {
+          content: "";
+          position: absolute;
+          top: 4px;
+          left: -20px;
+          width: 13px;
+          height: 13px;
+          background: url("../img/dest/icons.svg#user") no-repeat;
+          background-color: #192144;
+          opacity: 0.5;
+        }
+        &__flag {
+          width: 35px;
+          height: 24px;
+          position: absolute;
+          left: 30px;
+          top: -10px;
+        }
+      }
+    }
+  }
+  .route__btn {
+    background: #ffd74b;
+    margin-top: 16px;
+    margin-bottom: 30px;
+  }
+  button {
+    margin: 0 auto;
+  }
+}
+
+/***********    /route     ***********/
+
+.travelers {
+  border-radius: 0 0 30px 30px;
+  background-color: #192144;
+  .travelers__description {
+    padding-top: 60px;
+    margin-left: 50px;
+    position: relative;
+  }
+  .travelers__description-title {
+    padding-bottom: 23px;
+    background: #000;
+  }
+
+  .travelers__description-text {
+    color: #fff;
+  }
+  .travelers__description-text p:nth-child(1) {
+    width: 217px;
+  }
+  .travelers__description-text p:nth-child(2) {
+    padding-top: 25px;
+    font-weight: 700;
+    width: 204px;
+    padding-bottom: 60px;
+  }
+}

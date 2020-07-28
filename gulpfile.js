@@ -15,12 +15,12 @@ const webphtml = require("gulp-webp-html");
 const webpcss = require("gulp-webp-css");
 const svgSprite = require("gulp-svg-sprite");
 const newer = require("gulp-newer");
-const ttf2woff = require('gulp-ttf2woff');
-const ttf2woff2 = require('gulp-ttf2woff2');
-const fonter = require('gulp-fonter');
+const ttf2woff = require("gulp-ttf2woff");
+const ttf2woff2 = require("gulp-ttf2woff2");
+const fonter = require("gulp-fonter");
 const del = require("del");
 
-let fs = require('fs');
+let fs = require("fs");
 
 function browsersync() {
   browserSync.init({
@@ -28,26 +28,28 @@ function browsersync() {
     server: { baseDir: "src/" }, // Указываем папку сервера
     notify: false, // Отключаем уведомления
     online: true,
-    port: 4002 // Режим работы: true или false
+    port: 4002, // Режим работы: true или false
   });
 }
 
 function html() {
   // работа с html
-  return src("src/**.html")
-    .pipe(
-      include({
-        prefix: "@@", // для многостраничника (подключать модули в старницы типа @@include footer)
-      })
-    )
-    .pipe(webphtml())
-    .pipe(
-      htmlmin({
-        // минифицируем все html
-        collapseWhitespace: true,
-      })
-    )
-    .pipe(dest("dist"));
+  return (
+    src("src/**.html")
+      .pipe(
+        include({
+          prefix: "@@", // для многостраничника (подключать модули в старницы типа @@include footer)
+        })
+      )
+      // .pipe(webphtml())
+      // .pipe(
+      //   htmlmin({
+      //     // минифицируем все html
+      //     collapseWhitespace: true,
+      //   })
+      // )
+      .pipe(dest("dist"))
+  );
 }
 
 function scripts() {
@@ -91,34 +93,36 @@ function styles() {
 }
 
 function images() {
-  return src("src/img/src/**/*") // Берём все изображения из папки источника
-    .pipe(newer("src/img/dest/")) // Проверяем, было ли изменено (сжато) изображение ранее, чтобы покругу не сжимать
-    // .pipe(src("src/img/src/**/*"))
-    // .pipe(
-    //   webp({
-    //     quality: [0.6, 0.7],
-    //     lossless: true,
-    //   }),
-    // )
-    // .pipe(dest("src/img/dest/"))
-    // .pipe(src("src/img/src/**/*"))
-    // .pipe(newer("src/img/dest/"))
-    .pipe(
-      imagemin([
-        imgCompress({
-          loops: 4,
-          min: 70,
-          max: 80,
-          quality: [0.5, 0.6]
-        }),
-        imagemin.gifsicle(),
-        imagemin.optipng(),
-        imageminPngquant({ quality: [0.7, 0.8] }),
-        imagemin.svgo({ plugins: [{ removeViewBox: true }] }),
-      ])
-    )
-    // Сжимаем и оптимизируем изображеня
-    .pipe(dest("src/img/dest/"));
+  return (
+    src("src/img/src/**/*") // Берём все изображения из папки источника
+      .pipe(newer("src/img/dest/")) // Проверяем, было ли изменено (сжато) изображение ранее, чтобы покругу не сжимать
+      // .pipe(src("src/img/src/**/*"))
+      // .pipe(
+      //   webp({
+      //     quality: [0.6, 0.7],
+      //     lossless: true,
+      //   }),
+      // )
+      // .pipe(dest("src/img/dest/"))
+      // .pipe(src("src/img/src/**/*"))
+      // .pipe(newer("src/img/dest/"))
+      .pipe(
+        imagemin([
+          imgCompress({
+            loops: 4,
+            min: 70,
+            max: 80,
+            quality: [0.5, 0.6],
+          }),
+          imagemin.gifsicle(),
+          imagemin.optipng(),
+          imageminPngquant({ quality: [0.7, 0.8] }),
+          imagemin.svgo({ plugins: [{ removeViewBox: true }] }),
+        ])
+      )
+      // Сжимаем и оптимизируем изображеня
+      .pipe(dest("src/img/dest/"))
+  );
 
   // Выгружаем оптимизированные изображения в папку назначения
 }
@@ -160,21 +164,19 @@ function startwatch() {
 {
   // Fonts || Шрифты из ttf to woff, woff2
   function fonts() {
-    src('src/fonts/')
-      .pipe(ttf2woff())
-      .pipe(dest('src/fonts/'));
-    return src('src/fonts/')
-      .pipe(ttf2woff2())
-      .pipe(dest('src/fonts/'));
+    src("src/fonts/").pipe(ttf2woff()).pipe(dest("src/fonts/"));
+    return src("src/fonts/").pipe(ttf2woff2()).pipe(dest("src/fonts/"));
   }
   // Fonts || Шрифты из otf to ttf
-  task('otf2ttf', function () {
-    return src('src/fonts/*.otf') // откуда берем
-      .pipe(fonter({
-        formats: ['ttf'] // формат, который хотим получить
-      }))
-      .pipe(dest('src/fonts/'))
-  })
+  task("otf2ttf", function () {
+    return src("src/fonts/*.otf") // откуда берем
+      .pipe(
+        fonter({
+          formats: ["ttf"], // формат, который хотим получить
+        })
+      )
+      .pipe(dest("src/fonts/"));
+  });
 
   //   function fontsStyle(params, done) { // добавляет шрифты в fonts.scss
 
@@ -199,25 +201,23 @@ function startwatch() {
   //   }
 
   //   function cb() { }
-
 }
 
 //cпрайты || sprites
-task('svgSprite', function () {
-  return src('src/img/src/*.svg') // откуда берем
-    .pipe(svgSprite({
-      mode: {
-        stack: {
-          sprite: "../dest/icons.svg", // куда кладем
-          example: true // создает html с примерами иконок
-        }
-      }
-    })
-
+task("svgSprite", function () {
+  return src("src/img/src/*.svg") // откуда берем
+    .pipe(
+      svgSprite({
+        mode: {
+          stack: {
+            sprite: "../dest/icons.svg", // куда кладем
+            example: true, // создает html с примерами иконок
+          },
+        },
+      })
     )
-    .pipe(dest('src/img'))
-})
-
+    .pipe(dest("src/img"));
+});
 
 // Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
 exports.browsersync = browsersync;
@@ -229,13 +229,23 @@ exports.svgSprite = svgSprite;
 exports.cleandist = cleandist;
 exports.fonts = fonts;
 
-
 exports.cleanimg = cleanimg;
 
 // Собираем проект через 'gulp build'
-exports.build = series(cleandist, parallel(styles, scripts, images, html, fonts, buildcopy));
+exports.build = series(
+  cleandist,
+  parallel(styles, scripts, images, html, fonts, buildcopy)
+);
 
 // Режим разработчика через 'gulp'
-exports.default = parallel(styles, scripts, html, fonts, svgSprite, startwatch, browsersync);
+exports.default = parallel(
+  styles,
+  scripts,
+  html,
+  fonts,
+  svgSprite,
+  startwatch,
+  browsersync
+);
 
 // Запусти gulp svgIcons и все твои иконки *.svg из src/img/src/ сформируются в src/img/dest/icons.svg || cпрайты || sprites
