@@ -65,31 +65,33 @@ function scripts() {
 }
 
 function styles() {
-  return src("src/scss/**.scss")
-    .pipe(eval(sass)())
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: ["last 10 versions"],
-      })
-    )
-    .pipe(webpcss())
-    .pipe(
-      cleancss({
-        level: {
-          1: {
-            all: true,
-            normalizeUrls: false,
-            specialComments: 0,
-          },
-          2: {
-            restructureRules: true,
-          },
-        } /* , format: 'beautify' */,
-      })
-    ) // Минифицируем стили
-    .pipe(concat("master.min.css"))
-    .pipe(dest("src/css"))
-    .pipe(browserSync.stream()); // Сделаем инъекцию в браузер
+  return (
+    src("src/scss/**.scss")
+      .pipe(eval(sass)())
+      .pipe(
+        autoprefixer({
+          overrideBrowserslist: ["last 10 versions"],
+        })
+      )
+      // .pipe(webpcss())
+      .pipe(
+        cleancss({
+          level: {
+            1: {
+              all: true,
+              normalizeUrls: false,
+              specialComments: 0,
+            },
+            2: {
+              restructureRules: true,
+            },
+          } /* , format: 'beautify' */,
+        })
+      ) // Минифицируем стили
+      .pipe(concat("master.min.css"))
+      .pipe(dest("src/css"))
+      .pipe(browserSync.stream())
+  ); // Сделаем инъекцию в браузер
 }
 
 function images() {

@@ -13,21 +13,130 @@
 @import "variables.scss";
 @import "fonts.scss";
 
-* {
-  padding: 0;
-  margin: 0;
-  text-decoration: none;
-}
-
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
-
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 html {
   box-sizing: border-box;
   font-family: "Blogger Sans";
@@ -37,6 +146,7 @@ html {
 *::after,
 *::before {
   box-sizing: inherit;
+  text-decoration: none;
 }
 
 body {
@@ -94,6 +204,8 @@ p {
 /***********    header     ***********/
 
 .header {
+  margin: 0 auto;
+  width: 320px;
   background: url("../img/dest/globe-back-mobile@1x.jpg") no-repeat;
   &__inner {
     min-height: 100%;
@@ -180,6 +292,8 @@ p {
 /***********    delight     ***********/
 
 .delight {
+  width: 320px;
+  margin: 0 auto;
   background: #0c0f1f;
 
   .connection {
@@ -270,6 +384,9 @@ p {
   background: #192144 url("../img/dest/about-mobile@1x.webp") no-repeat; // если вставить png, то gulp webp перекроет png и bg-position перестает работать
   background-position: bottom;
   border-radius: 0 0 30px 30px;
+  display: block;
+  margin: 0 auto;
+  width: 320px;
 
   .choice {
     width: 270px;
@@ -277,6 +394,7 @@ p {
     margin-top: -50px;
     margin-left: 25px;
     display: block;
+
     &__card {
       font-size: 18px;
       font-weight: 700;
@@ -286,15 +404,16 @@ p {
       padding-bottom: 40px;
       margin-top: -25px;
       position: relative;
-    }
-    &__card-text {
-      color: #161c35;
-    }
-    &__card-number {
-      color: #fff;
-      position: absolute;
-      top: 23px;
-      right: 23px;
+
+      &-text {
+        color: #161c35;
+      }
+      &-number {
+        color: #fff;
+        position: absolute;
+        top: 23px;
+        right: 23px;
+      }
     }
     &__card:first-child {
       border-radius: 10px 10px 0 0;
@@ -385,32 +504,6 @@ p {
         border-radius: 10px 10px 0 0;
       }
 
-      &:nth-child(3) > .card-info {
-        box-shadow: inset 0 -74px 26px -26px rgb(237, 239, 246);
-      }
-      // Фото на карточке
-      &:nth-child(1) > div.card-background-inner {
-        background: url("../img/dest/thailand-mobile@1x.jpg");
-      }
-      &:nth-child(2) > div.card-background-inner {
-        background: url("../img/dest/france-mobile@1x.jpg");
-      }
-      &:nth-child(3) > div.card-background-inner {
-        background: url("../img/dest/czech-mobile@1x.jpg");
-      }
-      // Флаги на карточке
-      &:nth-child(1) > .card-info > .card-info__flag {
-        background: url("../img/dest/icons.svg#flag-thailand") no-repeat;
-      }
-
-      &:nth-child(2) > .card-info > .card-info__flag {
-        background: url("../img/dest/icons.svg#flag-france") no-repeat;
-      }
-
-      &:nth-child(3) > .card-info > .card-info__flag {
-        background: url("../img/dest/icons.svg#flag-czech") no-repeat;
-      }
-
       .card-info {
         border-radius: 10px;
         background-color: #ffffff;
@@ -464,6 +557,31 @@ p {
           top: -10px;
         }
       }
+      &:nth-child(3) > .card-info {
+        box-shadow: inset 0 -74px 26px -26px rgb(237, 239, 246);
+      }
+      // Фото на карточке
+      &:nth-child(1) > div.card-background-inner {
+        background: url("../img/dest/thailand-mobile@1x.jpg");
+      }
+      &:nth-child(2) > div.card-background-inner {
+        background: url("../img/dest/france-mobile@1x.jpg");
+      }
+      &:nth-child(3) > div.card-background-inner {
+        background: url("../img/dest/czech-mobile@1x.jpg");
+      }
+      // Флаги на карточке
+      &:nth-child(1) > .card-info > .card-info__flag {
+        background: url("../img/dest/icons.svg#flag-thailand") no-repeat;
+      }
+
+      &:nth-child(2) > .card-info > .card-info__flag {
+        background: url("../img/dest/icons.svg#flag-france") no-repeat;
+      }
+
+      &:nth-child(3) > .card-info > .card-info__flag {
+        background: url("../img/dest/icons.svg#flag-czech") no-repeat;
+      }
     }
   }
   .route__btn {
@@ -483,11 +601,15 @@ p {
 .travelers {
   border-radius: 0 0 30px 30px;
   background-color: #192144;
+  padding-bottom: 30px;
   .travelers__description {
+    width: 180px;
+    display: block;
     padding-top: 60px;
     margin-left: 50px;
     position: relative;
     z-index: 2;
+    margin: 0 auto;
 
     &-title {
       padding-bottom: 23px;
@@ -514,8 +636,8 @@ p {
       background: url("../img/dest/smolov-desktop@1x.webp") no-repeat;
       width: 143px;
       height: 143px;
-      top: 39px;
-      right: 25px;
+      top: 37px;
+      right: -50px;
       opacity: 0.2;
       border-radius: 20px;
       display: block;
@@ -537,7 +659,475 @@ p {
     }
   }
   .companion {
-    // &:nth-child(1) > div.companion-card__flag > ul > li:nth-child(1)
+    width: 270px;
+    margin: 0 auto;
+    position: relative;
+    .companion-card {
+      padding-bottom: 10px;
+      &:nth-child(1)::before {
+        content: "";
+        background: url("../img/dest/rogovaya-back-mobile@1x.png");
+        position: absolute;
+        top: -30px;
+        left: -37px;
+        width: 71px;
+        height: 71px;
+      }
+      &:nth-child(1)
+        > div.companion-card-image
+        > div.companion-card-image__score {
+        background: url("../img/dest/status_bar99.png"),
+          rgba($color: #000000, $alpha: 0.5);
+      }
+      &:nth-child(2)
+        > div.companion-card-image
+        > div.companion-card-image__score {
+        background: url("../img/dest/status_bar80.png"),
+          rgba($color: #000000, $alpha: 0.5);
+      }
+      //  фотография с девушкой
+      &-image {
+        position: relative;
+        &__score {
+          position: absolute;
+          background: rgba($color: #000000, $alpha: 0.5);
+          border-radius: 50%;
+          color: #ffffff;
+          width: 60px;
+          height: 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-left: 16px;
+          margin-top: 16px;
+
+          &-quaantity {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 24px;
+          }
+          &-line {
+            background: #fff;
+            width: 31px;
+            height: 1px;
+            opacity: 0.3;
+            margin-bottom: 4px;
+          }
+          &-level {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 14px;
+          }
+        }
+        &__photo {
+          border-radius: 10px 10px 0 0;
+          width: 270px;
+          height: 270px;
+        }
+      }
+      &-info {
+        border-radius: 0 0 10px 10px;
+        background-color: #ffffff;
+        width: 270px;
+        text-align: center;
+        position: relative;
+
+        &__flag {
+          width: 100%;
+          position: absolute;
+          margin-top: -10px;
+        }
+        &__flag ul {
+          display: flex;
+          justify-content: center;
+          padding: 0;
+        }
+        &__flag li {
+          width: 55px;
+          height: 24px;
+          padding: 0;
+          justify-content: center;
+          align-items: center;
+          display: inline-flex;
+        }
+        &__wrapper {
+          position: relative;
+          &-name::before {
+            content: "";
+            width: 5px;
+            height: 5px;
+            position: absolute;
+            border-radius: 3px;
+            margin-top: 7px;
+            margin-left: -13px;
+          }
+          &-name {
+            padding-top: 30px;
+            color: #1d2e5b;
+            font-size: 21px;
+            font-weight: 700;
+            line-height: 21px;
+          }
+        }
+
+        &__tag p {
+          padding-top: 16px;
+          color: #444444;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 18px;
+          width: 190px;
+          margin: 0 auto;
+        }
+        &__way {
+          position: relative;
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
+        &__way ul {
+          width: auto;
+          height: 21px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        &__way li {
+          height: 21px;
+          background: #fff;
+          margin-left: 10px;
+        }
+      }
+      &:nth-child(1)
+        > div.companion-card-image
+        > div.companion-card-image__photo {
+        background: url("../img/dest/firsova-desktop@1x.jpg");
+      }
+      //  фотография с бородачем
+      &:nth-child(2)
+        > div.companion-card-image
+        > div.companion-card-image__photo {
+        background: url("../img/dest/demin-desktop@1x.jpg");
+      }
+      // флаги у девушки
+
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__flag
+        > ul
+        > li:nth-child(1) {
+        background: url("../img/dest/icons.svg#flag-sri-lanka") no-repeat;
+      }
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__flag
+        > ul
+        > li:nth-child(2) {
+        background: url("../img/dest/icons.svg#flag-thailand") no-repeat;
+      }
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__flag
+        > ul
+        > li:nth-child(3) {
+        background: url("../img/dest/icons.svg#flag-seychelles") no-repeat;
+      }
+      // флаги у парня
+      &:nth-child(2)
+        > div.companion-card-info
+        > div.companion-card-info__flag
+        > ul
+        > li:nth-child(1) {
+        background: url("../img/dest/icons.svg#flag-belgium") no-repeat;
+      }
+      &:nth-child(2)
+        > div.companion-card-info
+        > div.companion-card-info__flag
+        > ul
+        > li:nth-child(2) {
+        background: url("../img/dest/icons.svg#flag-czech") no-repeat;
+      }
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__wrapper
+        > div::before {
+        content: "";
+        background-color: #f97676;
+      }
+      &:nth-child(2)
+        > div.companion-card-info
+        > div.companion-card-info__wrapper
+        > div::before {
+        content: "";
+        background: #81e31e;
+      }
+
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(2) {
+        background: url("../img/dest/icons.svg#bus") no-repeat;
+        width: 17px;
+        opacity: 0.15;
+      }
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(3) {
+        background: url("../img/dest/icons.svg#bike") no-repeat;
+        width: 24px;
+        opacity: 0.15;
+      }
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(4) {
+        background: url("../img/dest/icons.svg#run") no-repeat;
+        width: 20px;
+        opacity: 0.15;
+      }
+
+      &:nth-child(2)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(1) {
+        background: url("../img/dest/icons.svg#plane") no-repeat;
+        width: 19px;
+      }
+      &:nth-child(2)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(2) {
+        background: url("../img/dest/icons.svg#bus") no-repeat;
+        width: 17px;
+      }
+      &:nth-child(2)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(3) {
+        background: url("../img/dest/icons.svg#bike") no-repeat;
+        width: 24px;
+        opacity: 0.15;
+      }
+      &:nth-child(2)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(4) {
+        background: url("../img/dest/icons.svg#run") no-repeat;
+        width: 20px;
+      }
+
+      &:nth-child(1)
+        > div.companion-card-info
+        > div.companion-card-info__way
+        > ul
+        > li:nth-child(1) {
+        background: url("../img/dest/icons.svg#plane") no-repeat;
+        width: 19px;
+      }
+    }
+  }
+  .travelers__btn {
+    background: #ffd74b;
+    margin-top: 16px;
   }
 }
-/***********    /@at-root     ***********/
+/***********    /travelers     ***********/
+
+/***********    tariff     ***********/
+
+.tariff {
+  border-radius: 0 0 30px 30px;
+  background-color: #edeff6;
+  width: 320px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 26px;
+  .create-profil {
+    display: flex;
+    padding-top: 52px;
+    justify-content: space-between;
+    align-items: center;
+    &__title h3 {
+      width: 100px;
+    }
+    &__image {
+      background: url("../img/dest/rates@1x.png") no-repeat;
+      background-size: cover;
+      width: 99px;
+      height: 99px;
+    }
+  }
+  .collection {
+    padding-top: 59px;
+    .option {
+      color: #444444;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 22px;
+      position: relative;
+      margin-bottom: 20px;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 0px;
+        width: 200px;
+        height: 1px;
+        background: #000;
+        opacity: 0.05;
+      }
+      &::after {
+        top: 120px;
+      }
+      &__number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 34px;
+        height: 34px;
+        top: 10px;
+        right: 0;
+        border-radius: 50%;
+        color: #fff;
+      }
+
+      &:nth-child(1) > div.option__number {
+        background: #ffa530;
+        margin-top: -15px;
+      }
+      &:nth-child(2) > div.option__number {
+        background: #ffbd30;
+        margin-top: -15px;
+      }
+      &:nth-child(3) > div.option__number {
+        background: #ffd74b;
+        margin-top: -15px;
+      }
+    }
+  }
+
+  &__more {
+    padding-top: 45px;
+    padding-bottom: 38px;
+    & a {
+      color: #192144;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 16px;
+    }
+  }
+}
+
+/***********    /tariff     ***********/
+
+/***********    form     ***********/
+.form {
+  border-radius: 0 0 30px 30px;
+  background-color: #192144;
+  text-align: center;
+  &__title {
+    padding-top: 72px;
+  }
+  &__description {
+    padding-top: 23px;
+    padding-bottom: 32px;
+  }
+  &__description p {
+    color: #fff;
+  }
+  &__description a {
+    color: #ffd74b;
+    text-decoration: underline;
+  }
+  &__mail {
+    justify-content: center;
+    display: flex;
+    position: relative;
+    &-input {
+      width: 270px;
+      height: 62px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      border: none;
+      &::placeholder {
+        color: #444444;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 18px;
+        padding-left: 24px;
+      }
+    }
+    &-button {
+      position: absolute;
+      margin: 0 auto;
+      margin-left: 208px;
+      width: 62px;
+      height: 62px;
+      border-radius: 10px;
+      background-color: #ffd74b;
+      border: none;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: 30%;
+        left: 30%;
+        background: url("../img/dest/icons.svg#triangle-arrow-right") no-repeat;
+      }
+    }
+  }
+  &__text {
+    color: #fff;
+    padding-top: 32px;
+    padding-bottom: 36px;
+  }
+  &__contacts {
+    width: 320px;
+    margin: 0 auto;
+    display: block;
+    color: #ffd74b;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    padding-bottom: 32px;
+    &-phone {
+      display: flex;
+      justify-content: ;
+      padding-bottom: 32px;
+      &::before {
+        content: "";
+        width: 45px;
+        height: 45px;
+        background-color: #121936;
+      }
+      &-icon {
+      }
+    }
+    &-mail {
+      text-transform: uppercase;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: #121936;
+
+        margin-left: -150px;
+        margin-top: -10px;
+      }
+    }
+  }
+}
+/***********    /form     ***********/
