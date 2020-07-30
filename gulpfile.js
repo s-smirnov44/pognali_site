@@ -55,7 +55,7 @@ function html() {
 function scripts() {
   return src([
     // Берём файлы из источников
-    "node_modules/jquery/dist/jquery.min.js", // Пример подключения библиотеки
+
     "src/js/main.js", // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
   ])
     .pipe(concat("master.min.js")) // Конкатенируем в один файл
@@ -66,7 +66,7 @@ function scripts() {
 
 function styles() {
   return (
-    src("src/scss/**.scss")
+    src("src/scss/form.scss")
       .pipe(eval(sass)())
       .pipe(
         autoprefixer({
@@ -88,7 +88,7 @@ function styles() {
           } /* , format: 'beautify' */,
         })
       ) // Минифицируем стили
-      .pipe(concat("master.min.css"))
+      .pipe(concat("form.min.css"))
       .pipe(dest("src/css"))
       .pipe(browserSync.stream())
   ); // Сделаем инъекцию в браузер
