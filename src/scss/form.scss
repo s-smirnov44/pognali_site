@@ -1,141 +1,9 @@
 @import "variables.scss";
 @import "fonts.scss";
+@import "mixins.scss";
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-html {
-  box-sizing: border-box;
-  font-family: "Blogger Sans";
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  text-decoration: none;
-}
+@include reset;
+@include general-style;
 
 body {
   min-width: 320px;
@@ -143,57 +11,6 @@ body {
 }
 
 /************  Общие стили ************/
-
-.container {
-  padding: 0 25px;
-}
-
-h4 {
-  color: #1d2e5b;
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
-  text-transform: uppercase;
-}
-
-p {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 22px;
-}
-
-.circle-mini {
-  width: 33px;
-  height: 33px;
-  border-radius: 50%;
-  background-color: #ffffff;
-}
-
-.circle-middle {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  background-color: #ffd74b;
-}
-
-.btn {
-  width: 270px;
-  height: 40px;
-  border-radius: 20px;
-
-  color: #161c35;
-  font-size: 17px;
-  font-weight: 700;
-  line-height: 30px;
-  text-transform: uppercase;
-  border: none;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
 /************  /Общие стили ************/
 
@@ -289,7 +106,7 @@ p {
 /***********    profil     ***********/
 
 .profile {
-  background: #edeef1;
+  background: #edeff6;
   padding-bottom: 33px;
 
   &__btn {
@@ -306,10 +123,8 @@ p {
       border-radius: 50%;
       color: #161c35;
 
-      display: flex;
+      @include flexible;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
 
       &-scale {
         position: absolute;
@@ -363,16 +178,15 @@ p {
       z-index: 5;
       margin: auto;
       top: -7px;
-      &-back {
-        position: absolute;
-        margin: auto;
-        content: "";
-        width: 70px;
-        height: 29px;
-        background-color: #edeff6;
-        z-index: 4;
-        top: -13px;
-      }
+    }
+    &__back {
+      position: absolute;
+      margin: auto;
+      width: 70px;
+      height: 29px;
+      background-color: #edeff6;
+      z-index: 4;
+      top: -13px;
     }
     &__text p {
       color: #444444;
@@ -390,14 +204,25 @@ p {
     justify-content: center;
     align-items: center;
 
+    &__title {
+      position: absolute;
+      z-index: 10;
+      margin: auto;
+      top: -7px;
+    }
+    &__back {
+      position: absolute;
+      margin: auto;
+      width: 100px;
+      height: 29px;
+      background-color: #edeff6;
+      z-index: 4;
+      top: -13px;
+    }
     .way {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexible;
       &__plane {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexible;
         &-icon {
           background: url("../img/dest/icons.svg#plane") no-repeat;
           width: 19px;
@@ -412,9 +237,7 @@ p {
         }
       }
       &__bike {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexible;
         &-icon {
           background: url("../img/dest/icons.svg#bike") no-repeat;
           width: 24px;
@@ -452,6 +275,389 @@ p {
 
 /***********    /profil     ***********/
 
+/***********    my-plan     ***********/
+
+.my-plan {
+  border-radius: 30px 30px 0 0;
+  background-color: #dfe3f0;
+
+  &__title {
+    padding-top: 29px;
+    margin-bottom: 34px;
+  }
+  &-collection {
+    padding-bottom: 30px;
+    &-card {
+      padding-left: 24px;
+      margin-bottom: 10px;
+      width: 270px;
+      height: 154px;
+      border-radius: 10px;
+      background-color: #ffffff;
+
+      &-wrapper {
+        padding-top: 20px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        &__number {
+          color: #1d2e5b;
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 16px;
+          /* Text style for "1." */
+          letter-spacing: 1.6px;
+        }
+      }
+
+      &__travelers {
+        margin-bottom: 7px;
+        color: #1d2e5b;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+      }
+      &__date {
+        color: #1d2e5b;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
+        margin-bottom: 27px;
+      }
+      &__btn {
+        opacity: 0.3;
+        color: #000000;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 18px;
+        text-transform: uppercase;
+        border: none;
+        letter-spacing: 1.4px;
+      }
+    }
+  }
+}
+
+/***********    /my-plan     ***********/
+
+/***********    add-plan     ***********/
+
+.add-plan {
+  width: 320px;
+  border-radius: 30px;
+  background-color: #d4d9eb;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  &-outer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 26px;
+    padding-bottom: 31px;
+    &__title {
+    }
+    &__pagination {
+      display: flex;
+      margin-right: 20px;
+      &-dot {
+        width: 5px;
+        height: 5px;
+        background-color: #1d2e5b;
+        border-radius: 50%;
+        margin-left: 16px;
+        &:nth-child(2),
+        &:nth-child(3) {
+          background-color: #808285;
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  /* Карточка 1 шаг */
+
+  &-step-one {
+    width: 270px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+    &__title {
+      padding-top: 24px;
+    }
+    &__description {
+      padding-top: 18px;
+      color: #444;
+      width: 220px;
+    }
+
+    /*  Ищу попутчика */
+    &-travelers {
+      margin-top: 25px;
+      &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: #1d2e5b;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2.15px;
+        &__title {
+        }
+        &__people {
+          opacity: 0.3;
+        }
+      }
+      &-counter {
+        display: flex;
+        justify-content: space-between;
+        color: #1d2e5b;
+        margin-top: 10px;
+        border-radius: 4px;
+        border: 1px solid #cbced9;
+        padding: 15px;
+        &__minus {
+          width: 16px;
+          height: 12px;
+          opacity: 0.3;
+          background: url("../img/dest/icons.svg#qty-minus-mobile");
+        }
+        &__value {
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 13.37px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        &__plus {
+          width: 18px;
+          height: 14px;
+          opacity: 0.3;
+          background: url("../img/dest/icons.svg#qty-plus-mobile");
+        }
+      }
+    }
+    /* Длительность */
+    &-duration {
+      margin-top: 25px;
+      &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        color: #1d2e5b;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2.15px;
+        &__title {
+        }
+        &__days {
+          opacity: 0.3;
+        }
+      }
+      &-counter {
+        display: flex;
+        justify-content: space-between;
+        color: #1d2e5b;
+        margin-top: 10px;
+        border-radius: 4px;
+        border: 1px solid #cbced9;
+        padding: 15px;
+        &__minus {
+          width: 16px;
+          height: 12px;
+          opacity: 0.3;
+          background: url("../img/dest/icons.svg#qty-minus-mobile");
+        }
+        &__value {
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 13.37px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        &__plus {
+          width: 18px;
+          height: 14px;
+          opacity: 0.3;
+          background: url("../img/dest/icons.svg#qty-plus-mobile");
+        }
+      }
+    }
+    /* Можно с детьми */
+    &-children {
+      margin-top: 30px;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      & input[type="checkbox"] {
+        width: 26px;
+        height: 26px;
+      }
+      &__check {
+        border-radius: 9px;
+        border: 1px solid #cbced9;
+      }
+      & label {
+        padding-left: 13px;
+        color: #444444;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 15px;
+      }
+    }
+
+    &-date {
+      &__month {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+        }
+
+        &-larrow {
+          width: 18px;
+          height: 18px;
+          opacity: 0.3;
+          background: url("../img/dest/icons.svg#month-arrow-left") no-repeat;
+        }
+        &-date {
+          color: #1d2e5b;
+          font-size: 20px;
+          font-weight: 700;
+          line-height: 20px;
+        }
+        &-rarrow {
+          width: 18px;
+          height: 18px;
+          opacity: 0.3;
+          background: url("../img/dest/icons.svg#month-arrow-right") no-repeat;
+        }
+      }
+      /* Календарь */
+      &-select {
+        display: flex;
+        justify-content: center;
+        margin-top: 36px;
+        font-size: 14px;
+
+        table {
+        }
+        &__calendar {
+          td {
+            border: 1px solid #ccc;
+            padding: 7px;
+            text-align: center;
+          }
+          tr.add-plan-step-one-date-select__calendar-week {
+            color: #000;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 18px;
+          }
+          &-day {
+          }
+        }
+      }
+    }
+
+    &__btn {
+      width: 230px;
+      margin: 23px 0;
+      background: #ffd74b;
+    }
+  }
+
+  /* Карточка 2 шаг */
+  &-step-two {
+    width: 270px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    &__title {
+      padding-top: 24px;
+    }
+    &__description {
+      padding-top: 18px;
+      color: #444;
+      width: 220px;
+      padding-bottom: 27px;
+    }
+    &__btn {
+      width: 230px;
+      margin: 23px 0;
+      background: #ffd74b;
+    }
+    &__back-btn {
+      width: 230px;
+      background: transparent;
+    }
+    &-collection {
+      &-country {
+        position: relative;
+        &:nth-child(1)
+          > div.add-plan-step-two-collection-country__flag::before {
+          background: url("../img/dest/icons.svg#flag-bosnia") no-repeat;
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 24px;
+          top: 0.5em;
+          right: 0.5em;
+        }
+        &:nth-child(2)
+          > div.add-plan-step-two-collection-country__flag::before {
+          background: url("../img/dest/icons.svg#flag-czech") no-repeat;
+          content: "";
+          position: absolute;
+          width: 35px;
+          height: 24px;
+          top: 0.5em;
+          right: 0.5em;
+        }
+        @include flexible;
+        margin-bottom: 22px;
+
+        &__flag {
+          position: relative;
+          width: 53px;
+          height: 42px;
+          @include border-gray;
+        }
+
+        &__title {
+          @include border-gray;
+          padding: 11px 0;
+          padding-left: 10px;
+          width: 168px;
+          box-shadow: inset -82px 0px 88px -12px rgba(255, 255, 255, 1);
+        }
+        &-select {
+          &__title {
+          }
+          &__arrow {
+          }
+        }
+        &-add {
+          &__title {
+          }
+          &__plus {
+          }
+        }
+      }
+    }
+  }
+}
+
+/***********    /add-plan     ***********/
+
 /***********    footer     ***********/
 
 .footer-form {
@@ -480,9 +686,7 @@ p {
       justify-content: center;
       margin-bottom: 71px;
       &__fb {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexible;
         &-icon {
           mask-image: url("../img/dest/icons.svg#facebook");
           mask-repeat: no-repeat;
@@ -493,9 +697,7 @@ p {
         }
       }
       &__vk {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexible;
         &-icon {
           mask-image: url("../img/dest/icons.svg#vk");
           mask-repeat: no-repeat;
@@ -507,9 +709,7 @@ p {
       }
 
       &__inst {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexible;
         &-icon {
           mask-image: url("../img/dest/icons.svg#instagram");
           mask-repeat: no-repeat;

@@ -27,14 +27,249 @@
           </nav>
         </div>
         <div class="description">
-          <h2 class="description__title">
-            В путешествие с крутыми попутчиками!
-          </h2>
+          <h1 class="description__title">
+            Направления
+          </h1>
         </div>
       </div>
     </header>
 
     <!--******************** /header ********************-->
+
+    <!--******************** profil ********************-->
+
+    <section class="profile">
+      <div class="container">
+        <div class="profile-image">
+          <div class="profile-image__score">
+            <div class="profile-image__score-scale"></div>
+            <div class="profile-image__score-quaantity">80</div>
+            <div class="profile-image__score-line"></div>
+            <div class="profile-image__score-level">level</div>
+          </div>
+          <div class="profile-image__photo"></div>
+        </div>
+
+        <button class="profile__btn btn">Сменить фото</button>
+
+        <div class="tags">
+          <div class="tags__title"><h4>тэги</h4></div>
+          <div class="tags__back"></div>
+          <div class="tags__text">
+            <p>#бургер #бар #футбол #концерт #крафт</p>
+          </div>
+        </div>
+
+        <div class="transport">
+          <div class="transport__title"><h4>транспорт</h4></div>
+          <div class="transport__back"></div>
+          <div class="way">
+            <div class="way__plane circle-mini center">
+              <div class="way__plane-icon"></div>
+            </div>
+            <div class="way__bus circle-mini center">
+              <div class="way__bus-icon"></div>
+            </div>
+            <div class="way__bike circle-mini center">
+              <div class="way__bike-icon"></div>
+            </div>
+            <div class="way__run circle-mini center">
+              <div class="way__run-icon"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--******************** /profil ********************-->
+
+    <!--******************** my-plan ********************-->
+
+    <section class="my-plan">
+      <div class="container">
+        <div class="my-plan__title"><h2>Мои планы:</h2></div>
+        <div class="my-plan-collection">
+          <div class="my-plan-collection-card">
+            <div class="my-plan-collection-card-wrapper">
+              <div class="my-plan-collection-card-wrapper__number">1.</div>
+              <div class="my-plan-collection-card-wrapper__title">
+                <h3>Франция, Италия</h3>
+              </div>
+            </div>
+            <div class="my-plan-collection-card__travelers">3 попутчика</div>
+            <div class="my-plan-collection-card__date">26 мар — 29 мар</div>
+            <button class="my-plan-collection-card__btn">изменить</button>
+          </div>
+          <div class="my-plan-collection-card">
+            <div class="my-plan-collection-card-wrapper">
+              <div class="my-plan-collection-card-wrapper__number">2.</div>
+              <div class="my-plan-collection-card-wrapper__title">
+                <h3>Тайланд, Индонезия</h3>
+              </div>
+            </div>
+            <div class="my-plan-collection-card__travelers">1 попутчик</div>
+            <div class="my-plan-collection-card__date">1 июл — 15 июл</div>
+            <button class="my-plan-collection-card__btn">изменить</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--******************** /my-plan ********************-->
+
+    <!--******************** add-plan ********************-->
+
+    <section class="add-plan">
+      <div class="container">
+        <div class="add-plan-outer">
+          <div class="add-plan-outer__title"><h2>Добавить план:</h2></div>
+          <div class="add-plan-outer__pagination">
+            <div class="add-plan-outer__pagination-dot"></div>
+            <div class="add-plan-outer__pagination-dot"></div>
+            <div class="add-plan-outer__pagination-dot"></div>
+          </div>
+        </div>
+        <!-- Карточка 1 шаг -->
+        <div class="add-plan-step-one">
+          <div class="container">
+            <div class="add-plan-step-one__title">
+              <h3>
+                Шаг 1. <br />
+                Даты пребывания
+              </h3>
+            </div>
+            <div class="add-plan-step-one__description">
+              <p>
+                Укажите предпочтительное количество попутчиков, которых вы
+                хотели бы позвать в поездку и ее предполагаемую длительность.
+              </p>
+            </div>
+            <!-- Ищу попутчиков -->
+            <div class="add-plan-step-one-travelers">
+              <div class="add-plan-step-one-travelers-wrapper">
+                <div class="add-plan-step-one-travelers-wrapper__title">
+                  ищу попутчиков:
+                </div>
+                <div class="add-plan-step-one-travelers-wrapper__people">
+                  чел.
+                </div>
+              </div>
+              <div class="add-plan-step-one-travelers-counter">
+                <div class="add-plan-step-one-travelers-counter__minus"></div>
+                <div class="add-plan-step-one-travelers-counter__value">2</div>
+                <div class="add-plan-step-one-travelers-counter__plus"></div>
+              </div>
+            </div>
+            <!-- Длительность -->
+            <div class="add-plan-step-one-duration">
+              <div class="add-plan-step-one-duration-wrapper">
+                <div class="add-plan-step-one-duration-wrapper__title">
+                  длительность:
+                </div>
+                <div class="add-plan-step-one-duration-wrapper__days">дн.</div>
+              </div>
+              <div class="add-plan-step-one-duration-counter">
+                <div class="add-plan-step-one-duration-counter__minus"></div>
+                <div class="add-plan-step-one-duration-counter__value">2</div>
+                <div class="add-plan-step-one-duration-counter__plus"></div>
+              </div>
+            </div>
+            <div class="add-plan-step-one-children">
+              <input
+                class="add-plan-step-one__check"
+                type="checkbox"
+                name=""
+                id=""
+              />
+              <label class="add-plan-step-one__text" for=""
+                >Можно с детьми</label
+              >
+            </div>
+            <div class="add-plan-step-one-date">
+              <div class="add-plan-step-one-date__month">
+                <div class="add-plan-step-one-date__month-larrow"></div>
+                <div class="add-plan-step-one-date__month-date">Март 2019</div>
+                <div class="add-plan-step-one-date__month-rarrow"></div>
+              </div>
+              <div class="add-plan-step-one-date-select">
+                <table class="add-plan-step-one-date-select__calendar">
+                  <thead>
+                    <tr class="add-plan-step-one-date-select__calendar-week">
+                      <th>п</th>
+                      <th>в</th>
+                      <th>с</th>
+                      <th>ч</th>
+                      <th>п</th>
+                      <th>с</th>
+                      <th>в</th>
+                    </tr>
+                  </thead>
+                  <tbody class="add-plan-step-one-date-select__calendar-day">
+                    <tr>
+                      <td>24</td>
+                      <td>25</td>
+                      <td>26</td>
+                      <td>27</td>
+                      <td>28</td>
+                      <td>1</td>
+                      <td>2</td>
+                    </tr>
+                    <tr>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                      <td>7</td>
+                      <td>8</td>
+                      <td>9</td>
+                    </tr>
+                    <tr>
+                      <td>10</td>
+                      <td>11</td>
+                      <td>12</td>
+                      <td>13</td>
+                      <td>14</td>
+                      <td>15</td>
+                      <td>16</td>
+                    </tr>
+                    <tr>
+                      <td>17</td>
+                      <td>18</td>
+                      <td>19</td>
+                      <td>20</td>
+                      <td>21</td>
+                      <td>22</td>
+                      <td>23</td>
+                    </tr>
+                    <tr>
+                      <td>24</td>
+                      <td>25</td>
+                      <td>26</td>
+                      <td>27</td>
+                      <td>28</td>
+                      <td>29</td>
+                      <td>30</td>
+                    </tr>
+                    <tr>
+                      <td>31</td>
+                      <td>1</td>
+                      <td>2</td>
+                      <td>3</td>
+                      <td>4</td>
+                      <td>5</td>
+                      <td>6</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <button class="add-plan-step-one__btn btn">следующий шаг</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--******************** /add-plan ********************-->
 
     <!--******************** footer ********************-->
 
@@ -42,13 +277,13 @@
       <div class="container">
         <div class="logotype"></div>
         <div class="social">
-          <div class="social__fb circle-middle">
+          <div class="social__fb circle-middle center">
             <div class="social__fb-icon"></div>
           </div>
-          <div class="social__vk circle-middle">
+          <div class="social__vk circle-middle center">
             <div class="social__vk-icon"></div>
           </div>
-          <div class="social__inst circle-middle">
+          <div class="social__inst circle-middle center">
             <div class="social__inst-icon"></div>
           </div>
         </div>
