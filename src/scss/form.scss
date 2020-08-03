@@ -107,7 +107,7 @@ body {
 
 .profile {
   background: #edeff6;
-  padding-bottom: 33px;
+  padding-bottom: 53px;
 
   &__btn {
     background-color: #dfe3f0;
@@ -280,7 +280,8 @@ body {
 .my-plan {
   border-radius: 30px 30px 0 0;
   background-color: #dfe3f0;
-
+  padding-bottom: 20px;
+  margin-top: -26px;
   &__title {
     padding-top: 29px;
     margin-bottom: 34px;
@@ -353,6 +354,7 @@ body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  margin-top: -26px;
   &-outer {
     display: flex;
     justify-content: space-between;
@@ -581,6 +583,7 @@ body {
     width: 270px;
     border-radius: 10px;
     background-color: #ffffff;
+    margin-bottom: 10px;
     &__title {
       padding-top: 24px;
     }
@@ -592,7 +595,8 @@ body {
     }
     &__btn {
       width: 230px;
-      margin: 23px 0;
+      margin-top: 23px;
+      margin-bottom: 19px;
       background: #ffd74b;
     }
     &__back-btn {
@@ -600,8 +604,42 @@ body {
       background: transparent;
     }
     &-collection {
+      position: relative;
       &-country {
         position: relative;
+        &__cross {
+          top: -5px;
+          right: -6px;
+          mask-image: url("../img/dest/icons.svg#small-cross");
+          mask-repeat: no-repeat;
+          width: 13px;
+          height: 13px;
+          position: absolute;
+          z-index: 5;
+          background-color: #a6a7ac;
+        }
+        &::before {
+          width: 15px;
+          height: 17px;
+          top: 47px;
+          right: 46px;
+          position: absolute;
+          content: "";
+          background: #cbced9;
+          mask-image: url("../img/dest/icons.svg#small-arrow");
+          mask-repeat: no-repeat;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          width: 21px;
+          height: 21px;
+          background-color: #edeff6;
+          border-radius: 50%;
+          top: -10px;
+          right: -10px;
+        }
         &:nth-child(1)
           > div.add-plan-step-two-collection-country__flag::before {
           background: url("../img/dest/icons.svg#flag-bosnia") no-repeat;
@@ -630,6 +668,16 @@ body {
           width: 53px;
           height: 42px;
           @include border-gray;
+          &::after {
+            position: absolute;
+            content: "";
+            width: 8px;
+            height: 8px;
+            background-color: #1d2e5b;
+            border-radius: 50%;
+            top: 15px;
+            left: -5px;
+          }
         }
 
         &__title {
@@ -637,18 +685,253 @@ body {
           padding: 11px 0;
           padding-left: 10px;
           width: 168px;
-          box-shadow: inset -82px 0px 88px -12px rgba(255, 255, 255, 1);
+          position: relative;
+          &::before {
+            box-shadow: inset -82px 0 12px -39px rgb(255, 255, 255);
+            position: absolute;
+            content: "";
+            width: 49px;
+            height: 36px;
+            top: 0;
+            right: 0;
+          }
+          &::after {
+            content: "";
+            width: 13px;
+            height: 15px;
+            opacity: 0.3;
+            position: absolute;
+            background: url("../img/dest/icons.svg#dropdown-form") no-repeat;
+            top: 14px;
+            right: 11px;
+          }
         }
         &-select {
+          position: relative;
           &__title {
+            width: 220px;
+            height: 42px;
+            border-radius: 4px;
+            border: 1px solid #cbced9;
+            padding: 11px 0 11px 10px;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 8px;
+              height: 8px;
+              border: 1px solid #cbced9;
+              border-radius: 50%;
+              top: 15px;
+              right: 50px;
+            }
+            &::before {
+              content: "";
+              width: 13px;
+              height: 15px;
+              opacity: 0.3;
+              position: absolute;
+              background: url(../img/dest/icons.svg#dropdown-form) no-repeat;
+              top: 16px;
+              right: 20px;
+            }
           }
-          &__arrow {
+
+          &__cross {
+            top: -5px;
+            right: -6px;
+            mask-image: url("../img/dest/icons.svg#small-cross");
+            mask-repeat: no-repeat;
+            width: 13px;
+            height: 13px;
+            position: absolute;
+            z-index: 5;
+            background-color: #a6a7ac;
+          }
+          &::after {
+            position: absolute;
+            content: "";
+            width: 21px;
+            height: 21px;
+            background-color: #edeff6;
+            border-radius: 50%;
+            top: -10px;
+            right: -10px;
+          }
+          &::before {
+            width: 15px;
+            height: 17px;
+            top: 47px;
+            right: 46px;
+            position: absolute;
+            content: "";
+            background: #cbced9;
+            -webkit-mask-image: url(../img/dest/icons.svg#small-arrow);
+            mask-image: url(../img/dest/icons.svg#small-arrow);
+            mask-repeat: no-repeat;
           }
         }
         &-add {
+          margin-top: 22px;
+          position: relative;
+
           &__title {
+            width: 220px;
+            height: 42px;
+            border-radius: 4px;
+            background-color: #edeff6;
+            padding: 11px 0 11px 10px;
+            position: relative;
+            &::after {
+              position: absolute;
+              content: "";
+              width: 8px;
+              height: 8px;
+              border: 1px solid #cbced9;
+              border-radius: 50%;
+              top: 15px;
+              right: 50px;
+            }
           }
           &__plus {
+            top: 12px;
+            right: 18px;
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            opacity: 0.3;
+            background: url("../img/dest/icons.svg#qty-plus-mobile") no-repeat;
+          }
+        }
+      }
+    }
+  }
+  /* Карточка 3 шаг */
+
+  &-step-three {
+    width: 270px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    margin-bottom: 83px;
+
+    &__title {
+      padding-top: 24px;
+    }
+    &__description {
+      padding-top: 18px;
+      color: #444;
+      width: 220px;
+      padding-bottom: 27px;
+    }
+
+    &__btn {
+      width: 230px;
+      margin-top: 23px;
+      margin-bottom: 19px;
+      background: #ffd74b;
+      margin-left: 20px;
+    }
+    &__back-btn {
+      margin-left: 20px;
+      width: 230px;
+      background: transparent;
+    }
+
+    &-collection {
+      position: relative;
+
+      &-path {
+        width: 2px;
+        height: 279px;
+        background-color: #1d2e5b;
+        position: absolute;
+        top: 7px;
+        left: -15px;
+        &::before {
+          content: "";
+          position: absolute;
+          width: 15px;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #1d2e5b;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          width: 15px;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #1d2e5b;
+          top: 278px;
+        }
+      }
+      &__plan {
+        &:nth-child(2) > div {
+          background: url("../img/dest/icons.svg#flag-bosnia") no-repeat;
+        }
+        &:nth-child(3) > div {
+          background: url("../img/dest/icons.svg#flag-czech") no-repeat;
+        }
+        position: relative;
+        &:nth-child(3) {
+          margin-top: 20px;
+        }
+
+        &-flag {
+          position: absolute;
+          width: 35px;
+          height: 24px;
+          right: 0;
+        }
+        &-country {
+          color: #1d2e5b;
+          font-family: "Blogger Sans";
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 18px;
+          padding-bottom: 16px;
+          padding-left: 12px;
+          display: block;
+          position: relative;
+          &::before {
+            position: absolute;
+            content: "";
+            width: 6px;
+            height: 6px;
+            background-color: #1d2e5b;
+            border-radius: 50%;
+            top: 5px;
+            left: 0;
+          }
+          &::after {
+            box-shadow: inset -82px 0 12px -39px rgb(255, 255, 255);
+            position: absolute;
+            content: "";
+            width: 49px;
+            height: 36px;
+            top: -6px;
+            right: 34px;
+          }
+        }
+        &-text {
+          text-align: left;
+          width: 220px;
+          height: 220px;
+          border-radius: 4px;
+          border: 1px solid #cbced9;
+          color: #444444;
+          font-family: "Blogger Sans";
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22px;
+          padding-top: 13px;
+          padding-left: 15px;
+          &::placeholder {
+            opacity: 0.3;
+            color: #444444;
+            font-family: "Blogger Sans";
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 22px;
           }
         }
       }
@@ -664,8 +947,8 @@ body {
   width: 320px;
   margin: 0 auto;
   position: relative;
-  z-index: 8;
-  // margin-top: -13px;
+  z-index: 12;
+  margin-top: -39px;
   border-radius: 30px 30px 0 0;
   background-color: #ffffff;
 

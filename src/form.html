@@ -266,6 +266,7 @@
             <button class="add-plan-step-one__btn btn">следующий шаг</button>
           </div>
         </div>
+
         <div class="add-plan-step-two">
           <div class="container">
             <div class="add-plan-step-two__title">
@@ -287,19 +288,21 @@
                   <h5>Босния и герцегов</h5>
                 </div>
                 <div class="add-plan-step-two-collection-country__flag"></div>
+                <div class="add-plan-step-two-collection-country__cross"></div>
               </div>
               <div class="add-plan-step-two-collection-country">
                 <div class="add-plan-step-two-collection-country__title">
                   <h5>Чехословакия</h5>
                 </div>
                 <div class="add-plan-step-two-collection-country__flag"></div>
+                <div class="add-plan-step-two-collection-country__cross"></div>
               </div>
               <div class="add-plan-step-two-collection-country-select">
                 <div class="add-plan-step-two-collection-country-select__title">
                   <h5>Выберите страну</h5>
                 </div>
                 <div
-                  class="add-plan-step-two-collection-country-select__arrow"
+                  class="add-plan-step-two-collection-country-select__cross"
                 ></div>
               </div>
               <div class="add-plan-step-two-collection-country-add">
@@ -316,6 +319,60 @@
               на шаг назад
             </button>
           </div>
+        </div>
+        <!-- Шаг 3 -->
+
+        <div class="add-plan-step-three">
+          <div class="container">
+            <div class="add-plan-step-three__title">
+              <h3>
+                Шаг 3. <br />
+                Развлечения
+              </h3>
+            </div>
+            <div class="add-plan-step-three__description">
+              <p>
+                Наконец, расскажите о своих планах времяпровождения. Можно
+                писать в свободной форме и ставить тэги.
+              </p>
+            </div>
+            <div class="add-plan-step-three-collection">
+              <div class="add-plan-step-three-collection-path"></div>
+              <div class="add-plan-step-three-collection__plan">
+                <div class="add-plan-step-three-collection__plan-flag"></div>
+                <label
+                  class="add-plan-step-three-collection__plan-country"
+                  for="action-plan"
+                  >Босния и герцегови</label
+                >
+
+                <textarea
+                  class="add-plan-step-three-collection__plan-text"
+                  placeholder="План действий"
+                ></textarea>
+              </div>
+              <div class="add-plan-step-three-collection__plan">
+                <div class="add-plan-step-three-collection__plan-flag"></div>
+                <label class="add-plan-step-three-collection__plan-country"
+                  >Чехословакия</label
+                >
+
+                <textarea
+                  class="add-plan-step-three-collection__plan-text"
+                  name="action-plan"
+                  placeholder="План действий"
+                >
+Пить пиво и лазить 
+по старым замкам, наслаждаться архитектурой 
+и вот это все.</textarea
+                >
+              </div>
+            </div>
+          </div>
+          <button class="add-plan-step-three__btn btn">Отправить</button>
+          <button class="add-plan-step-three__back-btn btn">
+            на шаг назад
+          </button>
         </div>
       </div>
     </section>
