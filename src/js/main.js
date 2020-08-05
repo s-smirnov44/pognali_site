@@ -25,7 +25,7 @@ document.querySelector(".menu__btn").onclick = function () {
 /* Добавление стилей к календарю */
 
 /* Фон для календаря от 30 до 6 */
-var elements = document.getElementsByTagName("td");
+var elements = document.getElementsByClassName("day");
 for (var i = 34; i < elements.length; i++) {
   elements[i].classList.add("free");
 }
@@ -37,7 +37,3 @@ for (var i = 0; i < elements.length - 11; i++) {
 for (var i = 31; i < elements.length - 8; i++) {
   elements[i].classList.add("active");
 }
-
-elements[31].classList.add("red-board");
-
-/* /Добавление стилей к календарю */

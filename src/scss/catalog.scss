@@ -1,0 +1,777 @@
+@import "variables.scss";
+@import "fonts.scss";
+@import "mixins.scss";
+
+@include reset;
+@include general-style;
+
+.light-pink {
+  background-color: #f9eaea;
+}
+
+.light-gray {
+  background-color: #edeff6;
+}
+
+.container-mini {
+  padding: 0 20px;
+}
+
+body {
+  min-width: 320px;
+  overflow-x: hidden;
+  background: #edeff6;
+}
+
+/***********    header     ***********/
+
+.header {
+  margin: 0 auto;
+  border-radius: 0 0 20px 20px;
+  background-color: #161c35;
+  padding-bottom: 12px;
+  position: relative;
+  z-index: 13;
+  &__inner {
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .logo,
+  .menu {
+    padding-top: 31px;
+  }
+
+  .menu__btn {
+    width: 25px;
+    height: 3px;
+    border-radius: 1px;
+    background: #fff;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -10px;
+      left: 0;
+      display: none;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #fff;
+    }
+  }
+
+  .menu {
+    &__btn.menu__btn-active {
+      background: transparent;
+      transition: all 0.2s ease-in-out;
+    }
+    &__btn.menu__btn-active::before {
+      transform: rotate(45deg);
+      top: 5px;
+      display: block;
+    }
+    &__btn.menu__btn-active::after {
+      transform: rotate(-45deg);
+      top: 5px;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  .description {
+    margin-top: 55px;
+    color: #fff;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      width: 214px;
+      height: 5px;
+      border-radius: 2px;
+      background-color: #ff8d30;
+      top: 47px;
+    }
+    &__title {
+      font-weight: 700;
+      font-style: normal;
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+}
+
+/***********    /header     ***********/
+
+/***********    filter-country     ***********/
+
+.filter-country {
+  border-radius: 0 0 20px 20px;
+  background-color: #e2e5f2;
+  padding-top: 50px;
+  padding-bottom: 17px;
+  margin-top: -30px;
+  .container {
+    @include flexible;
+    justify-content: space-between;
+  }
+
+  &__filter {
+    background: url("../img/dest/icons.svg#filter") no-repeat;
+    width: 15px;
+    height: 15px;
+  }
+  &__title {
+    margin-right: 15px;
+  }
+  &__title h4 {
+    color: #192144;
+    line-height: 22px;
+  }
+  &__dots {
+    background: url("../img/dest/icons.svg#dots") no-repeat;
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/***********    /filter-country     ***********/
+
+/***********    choose-traveler     ***********/
+
+.choose-traveler {
+  margin-top: 20px;
+  margin-bottom: 28px;
+  border-radius: 20px;
+  background-color: #ffd74b;
+  &__title {
+    width: 118px;
+    padding-top: 26px;
+    padding-bottom: 35px;
+  }
+  &__title h3 {
+    color: #1d2e5b;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22.49px;
+  }
+  &__btn {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 22px;
+  }
+  &-list-terms {
+    &__item {
+      padding-bottom: 13px;
+      padding-top: 13px;
+      &:nth-child(2) > div.choose-traveler-list-terms__item-title > h4,
+      &:nth-child(4) > div.choose-traveler-list-terms__item-title > h4,
+      &:nth-child(5) > div.choose-traveler-list-terms__item-title > h4 {
+        &::after {
+          position: absolute;
+          content: "";
+          mask-image: url("../img/dest/icons.svg#dropdown");
+          mask-repeat: no-repeat;
+          background-color: #192144;
+          right: 12px;
+          transform: rotate(180deg);
+          top: 2px;
+          width: 10px;
+          height: 10px;
+        }
+      }
+      &-title {
+        position: relative;
+        &::before {
+          position: absolute;
+          content: "";
+          width: 100%;
+          height: 1px;
+          background-color: #f3c72b;
+          margin-top: -13px;
+        }
+      }
+
+      &-title h4 {
+        color: #1d2e5b;
+        &::after {
+          position: absolute;
+          content: "";
+          mask-image: url("../img/dest/icons.svg#dropdown");
+          mask-repeat: no-repeat;
+          background-color: #192144;
+          right: 12px;
+          top: 5px;
+          width: 10px;
+          height: 10px;
+        }
+      }
+      &-music {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+
+        &-wrapper {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          padding-top: 10px;
+
+          & input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: none;
+            @include flexible;
+          }
+
+          &__check {
+            position: absolute;
+            z-index: 1;
+            opacity: 0;
+
+            & + label {
+              display: inline-flex;
+              align-items: center;
+              user-select: none;
+              /* поддельный checkbox */
+              &:before {
+                margin-top: -4px;
+                content: "";
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                flex-shrink: 0;
+                flex-grow: 0;
+                border: 1px solid #adb5bd;
+                border-radius: 0.25em;
+                margin-right: 0.5em;
+                background-color: #fff;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+              }
+            }
+            &:checked + label:before {
+              border-color: #fff;
+              background-color: #fff;
+              background-image: url("../img/dest/icons.svg#tick");
+            }
+            /* стили при наведении курсора на checkbox */
+            &:not(:disabled):not(:checked) + label:hover::before {
+              border-color: #b3d7ff;
+            }
+            /* стили для активного состояния чекбокса (при нажатии на него) */
+            &:not(:disabled):active + label::before {
+              background-color: #b3d7ff;
+              border-color: #b3d7ff;
+            }
+            /* стили для чекбокса, находящегося в фокусе */
+            &:focus + label::before {
+              box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+            }
+            /* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+            &:focus:not(:checked) + label::before {
+              border-color: #80bdff;
+            }
+            /* стили для чекбокса, находящегося в состоянии disabled */
+            &:disabled + label::before {
+              background-color: #e9ecef;
+            }
+          }
+          & label {
+            color: #444444;
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 15px;
+            vertical-align: baseline;
+          }
+        }
+      }
+      &-level {
+        color: #1d2e5b;
+        font-family: "Blogger Sans";
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 13.49px;
+        text-transform: uppercase;
+        /* Text style for "30" */
+        letter-spacing: 2px;
+        @include flexible;
+        text-align: center;
+        padding-top: 15px;
+        position: relative;
+        &-min {
+          border-radius: 4px 0 0 4px;
+          border: 1px solid #cbced9;
+          width: 110px;
+          padding: 11px 0;
+          background-color: #ffffff;
+          position: relative;
+          &:after {
+            position: absolute;
+            content: "";
+            width: 7px;
+            height: 11px;
+            background: #fff;
+            right: -5px;
+          }
+          &:before {
+            width: 16px;
+            height: 1px;
+            position: absolute;
+            content: "";
+            top: 16px;
+            right: -9px;
+            z-index: 99;
+            background: #cbced9;
+          }
+        }
+        &-max {
+          border-radius: 0 4px 4px 0;
+          border: 1px solid #cbced9;
+          width: 110px;
+          padding: 11px 0;
+          background-color: #ffffff;
+        }
+      }
+      &-scale {
+        padding-top: 20px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: space-around;
+        &-min {
+          width: 10px;
+          height: 10px;
+          background-color: #1d2e5b;
+          border-radius: 50%;
+          position: relative;
+          &:before {
+            position: absolute;
+            content: "";
+            width: 62px;
+            height: 2px;
+            border-radius: 1px;
+            background-color: #1d2e5b;
+            top: 4px;
+            left: -60px;
+            opacity: 0.2;
+          }
+        }
+        &-max {
+          width: 10px;
+          height: 10px;
+          background-color: #1d2e5b;
+          border-radius: 50%;
+          margin-right: -60px;
+          position: relative;
+          &:before {
+            position: absolute;
+            content: "";
+            width: 142px;
+            height: 2px;
+            border-radius: 1px;
+            background-color: #1d2e5b;
+            top: 4px;
+            left: -140px;
+          }
+        }
+      }
+    }
+  }
+  .way {
+    padding-top: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    &__plane {
+      @include flexible;
+      &-icon {
+        background: url("../img/dest/icons.svg#plane") no-repeat;
+        width: 17px;
+        height: 16px;
+      }
+    }
+    &__bus {
+      display: flex;
+      align-items: ce;
+      &-icon {
+        background: url("../img/dest/icons.svg#bus") no-repeat;
+        width: 17px;
+        height: 16px;
+      }
+    }
+    &__bike {
+      @include flexible;
+      &-icon {
+        background: url("../img/dest/icons.svg#bike") no-repeat;
+
+        opacity: 0.15;
+        width: 17px;
+        height: 16px;
+      }
+    }
+    &__run {
+      &-icon {
+        background: url("../img/dest/icons.svg#run") no-repeat;
+        width: 17px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+/***********    /choose-traveler     ***********/
+
+/***********    traveler-collection     ***********/
+
+.traveler-collection {
+  &-card {
+    border-radius: 20px;
+    background-color: #ffffff;
+    margin-top: 10px;
+    &-info {
+      padding-top: 15px;
+      display: flex;
+      position: relative;
+      &__photo {
+        display: block;
+        width: 70px;
+        height: 70px;
+        background: url("../img/dest/firsova-mobile@1x.jpg") no-repeat;
+        border-radius: 50%;
+        &-like {
+          margin-top: 55%;
+          margin-left: 70%;
+          @include flexible;
+          &-icon {
+            mask-image: url("../img/dest/icons.svg#heart-active");
+            mask-repeat: no-repeat;
+            width: 13px;
+            height: 11px;
+            background: RED;
+          }
+        }
+      }
+
+      &__title {
+        width: 100px;
+        padding-left: 15px;
+
+        &-name {
+        }
+        &-age {
+          padding-top: 5px;
+          color: #161c35;
+          font-family: "Blogger Sans";
+          font-size: 14px;
+          font-weight: 700;
+          line-height: 21px;
+          text-transform: uppercase;
+        }
+      }
+      &::after {
+        position: absolute;
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 3px;
+        background-color: #f97676;
+        right: 0;
+        top: 23px;
+      }
+    }
+
+    &__tags {
+      padding-top: 16px;
+    }
+    &__tags p {
+      color: #444444;
+      font-family: "Blogger Sans";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+    &__wish {
+      margin-top: 24px;
+      color: #444444;
+      font-family: "Blogger Sans";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+      position: relative;
+      &::before {
+        width: 14px;
+        height: 1px;
+        position: absolute;
+        content: "";
+        background: #edeff6;
+        top: 10px;
+        left: -26px;
+      }
+      &::after {
+        width: 140px;
+        height: 1px;
+        position: absolute;
+        content: "";
+        background: #edeff6;
+        top: 10px;
+        right: -26px;
+      }
+    }
+    &__flags {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      &-group {
+        @include flexible;
+        justify-content: start;
+        &-icon {
+          background: url("../img/dest/icons.svg#flag-sri-lanka") no-repeat;
+          width: 26px;
+          height: 18px;
+        }
+        &-title {
+          color: #1d2e5b;
+          font-family: "Blogger Sans";
+          font-size: 15px;
+          font-weight: 500;
+          line-height: 18px;
+          text-transform: uppercase;
+          padding-top: 5px;
+          padding-left: 10px;
+        }
+      }
+    }
+    &__text {
+      display: flex;
+      justify-content: space-between;
+      color: #444444;
+      font-family: "Blogger Sans";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 18px;
+      position: relative;
+      z-index: 15;
+      &:before {
+        width: 14px;
+        height: 1px;
+        position: absolute;
+        content: "";
+        background: #edeff6;
+        top: 12px;
+        left: -26px;
+      }
+      &:after {
+        width: 54px;
+        height: 1px;
+        position: absolute;
+        content: "";
+        background: #edeff6;
+        top: 12px;
+        right: -26px;
+      }
+
+      & p {
+        background: #fff;
+        border: 1px solid #fff;
+        padding: 0 10px;
+        z-index: 20;
+      }
+      &-line {
+        z-index: 3;
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #edeff6;
+        left: 0;
+        top: 12px;
+      }
+    }
+    &__icons {
+      padding-top: 16px;
+      padding-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &-way {
+        .way {
+          display: flex;
+          align-items: center;
+          justify-content: start;
+          &__plane {
+            @include flexible;
+            &-icon {
+              background: url("../img/dest/icons.svg#plane") no-repeat;
+              width: 17px;
+              height: 16px;
+            }
+          }
+          &__bus {
+            display: flex;
+            align-items: ce;
+            &-icon {
+              background: url("../img/dest/icons.svg#bus") no-repeat;
+              width: 17px;
+              height: 16px;
+              opacity: 0.15;
+            }
+          }
+          &__bike {
+            @include flexible;
+            &-icon {
+              background: url("../img/dest/icons.svg#bike") no-repeat;
+
+              opacity: 0.15;
+              width: 17px;
+              height: 16px;
+            }
+          }
+          &__run {
+            &-icon {
+              background: url("../img/dest/icons.svg#run") no-repeat;
+              width: 17px;
+              height: 16px;
+              opacity: 0.15;
+            }
+          }
+        }
+      }
+      &-level {
+        @include flexible;
+        &-scale {
+          width: 45px;
+          height: 45px;
+          position: absolute;
+          background: url(../img/dest/level99-catalog.png) no-repeat;
+        }
+        &-quaantity {
+          color: #1d2e5b;
+          font-family: "Blogger Sans";
+          font-size: 24px;
+          font-weight: 700;
+          line-height: 18px;
+        }
+      }
+    }
+    &__btn {
+      width: 230px;
+      background-color: #ffd74b;
+      margin-bottom: 22px;
+    }
+  }
+}
+/* 2 карточка */
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(2)
+  > div
+  > div.traveler-collection-card-info
+  > div.traveler-collection-card-info__photo {
+  background: url(../img/dest/demin-mobile@1x.jpg) no-repeat;
+}
+
+/***********    /traveler-collection    ***********/
+
+/***********    footer     ***********/
+
+.footer-catalog {
+  width: 320px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 12;
+  // margin-top: -39px;
+  border-radius: 30px 30px 0 0;
+  background-color: #ffffff;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 38px;
+    .logotype {
+      background: url("../img/dest/logo-mobile-blue@1x.png") no-repeat;
+      width: 100px;
+      height: 15px;
+      padding-bottom: 41px;
+      margin: 0 auto;
+    }
+    .social {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 71px;
+      &__fb {
+        @include flexible;
+        &-icon {
+          mask-image: url("../img/dest/icons.svg#facebook");
+          mask-repeat: no-repeat;
+          width: 18px;
+          height: 18px;
+          background: #000;
+        }
+      }
+      &__vk {
+        @include flexible;
+        &-icon {
+          mask-image: url("../img/dest/icons.svg#vk");
+          mask-repeat: no-repeat;
+          width: 18px;
+          height: 18px;
+
+          background: #000;
+        }
+      }
+
+      &__inst {
+        @include flexible;
+        &-icon {
+          mask-image: url("../img/dest/icons.svg#instagram");
+          mask-repeat: no-repeat;
+          width: 18px;
+          height: 18px;
+          background: #000;
+        }
+      }
+    }
+    .creator {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 24px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -22px;
+        left: 0;
+        width: 270px;
+        height: 1px;
+        background: #000;
+        opacity: 0.05;
+      }
+
+      &__text p {
+        font-weight: 400;
+        color: #444;
+      }
+      &__logo {
+        background: url("../img/dest/icons.svg#htmlacademy") no-repeat;
+        width: 37px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+/***********    /footer     ***********/
