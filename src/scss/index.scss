@@ -1,141 +1,7 @@
 @import "variables.scss";
 @import "fonts.scss";
-
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-html {
-  box-sizing: border-box;
-  font-family: "Blogger Sans";
-}
-
-*,
-*::after,
-*::before {
-  box-sizing: inherit;
-  text-decoration: none;
-}
+@import "mixins.scss";
+@include reset;
 
 body {
   min-width: 320px;
@@ -143,6 +9,10 @@ body {
 }
 
 /************  Общие стили ************/
+
+.none {
+  display: none;
+}
 
 .container {
   padding: 0 25px;
@@ -219,60 +89,43 @@ p {
   width: 320px;
   background: url("../img/dest/globe-back-mobile@1x.jpg") no-repeat;
   position: relative;
-  z-index: 7;
+  z-index: 9;
   &__inner {
     min-height: 100%;
     display: flex;
     justify-content: space-between;
-  }
 
-  .logo,
-  .menu {
-    padding-top: 31px;
-  }
+    .logo,
+    .menu {
+      padding-top: 31px;
+    }
 
-  .menu__btn {
-    width: 25px;
-    height: 3px;
-    border-radius: 1px;
-    background: #fff;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      top: -10px;
-      left: 0;
-      display: none;
+    .menu__btn {
       width: 25px;
       height: 3px;
+      border-radius: 1px;
       background: #fff;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      top: 10px;
-      left: 0;
-      display: block;
-      width: 25px;
-      height: 3px;
-      background: #fff;
-    }
-  }
-
-  .menu {
-    &__btn.menu__btn-active {
-      background: transparent;
-      transition: all 0.2s ease-in-out;
-    }
-    &__btn.menu__btn-active::before {
-      transform: rotate(45deg);
-      top: 5px;
-      display: block;
-    }
-    &__btn.menu__btn-active::after {
-      transform: rotate(-45deg);
-      top: 5px;
-      transition: all 0.2s ease-in-out;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        display: none;
+        width: 25px;
+        height: 3px;
+        background: #fff;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 10px;
+        left: 0;
+        display: block;
+        width: 25px;
+        height: 3px;
+        background: #fff;
+      }
     }
   }
   .description {
@@ -294,7 +147,156 @@ p {
     margin-top: 10px;
   }
 }
+.modal {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background: #fff;
+  width: 320px;
+  z-index: 990;
+  min-height: 100%;
 
+  &-header {
+    display: flex;
+    justify-content: space-between;
+
+    &-logo {
+      padding-top: 31px;
+    }
+    &-menu-close {
+      mask-image: url("../img/dest/icons.svg#menu-close");
+      width: 18px;
+      height: 18px;
+      background: #ccc;
+      mask-repeat: no-repeat;
+      margin-top: 31px;
+    }
+  }
+  &-links {
+    margin-top: 79px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+      color: #192144;
+      font-family: "Blogger Sans";
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 36px;
+      text-transform: uppercase;
+    }
+  }
+  &__btn {
+    width: 270px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #ffd74b;
+    color: #161c35;
+    font-family: "Blogger Sans";
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 30px;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 58px;
+  }
+  &-contacts {
+    width: 320px;
+    display: block;
+    color: #192144;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    padding-bottom: 32px;
+    margin-top: 50px;
+    margin-left: -40px;
+    &-phone {
+      display: flex;
+      justify-content: space-around;
+      padding-bottom: 32px;
+      margin-right: 90px;
+      &-background {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-top: -12px;
+        background-color: #121936;
+        z-index: 1;
+        margin-right: 100px;
+      }
+
+      &-icon {
+        background: url("../img/dest/icons.svg#contacts-phone") no-repeat;
+        width: 18px;
+        height: 18px;
+        margin-left: 45px;
+        margin-top: 3px;
+        position: relative;
+        z-index: 2;
+      }
+    }
+    &-mail {
+      justify-content: space-around;
+      display: flex;
+      text-transform: uppercase;
+      margin-right: 35px;
+
+      &-background {
+        position: absolute;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        margin-top: -15px;
+        background-color: #121936;
+        z-index: 1;
+        margin-right: 155px;
+      }
+      &-icon {
+        background: url("../img/dest/icons.svg#contacts-mail") no-repeat;
+        width: 18px;
+        height: 18px;
+        margin-left: 45px;
+        position: relative;
+        z-index: 2;
+      }
+    }
+  }
+  &-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 63px;
+    margin-bottom: 44px;
+
+    &__fb {
+      mask-image: url("../img/dest/icons.svg#facebook");
+      mask-repeat: no-repeat;
+      width: 28px;
+      height: 28px;
+      background: #ccc;
+    }
+    &__vk {
+      mask-image: url("../img/dest/icons.svg#vk");
+      mask-repeat: no-repeat;
+      width: 28px;
+      height: 28px;
+      background: #ccc;
+      margin-left: 28px;
+      margin-right: 25px;
+    }
+    &__insta {
+      mask-image: url("../img/dest/icons.svg#instagram");
+      mask-repeat: no-repeat;
+      width: 28px;
+      height: 28px;
+      background: #ccc;
+    }
+  }
+}
 /***********    /header     ***********/
 
 /***********    delight     ***********/
@@ -313,6 +315,7 @@ p {
     justify-content: center;
     margin-top: -20px;
     margin-left: 25px;
+    z-index: 10;
 
     &__phone-icon {
       mask-image: url("../img/dest/icons.svg#topmenu-phone");
@@ -1031,6 +1034,61 @@ p {
       font-size: 16px;
       font-weight: 700;
       line-height: 16px;
+    }
+  }
+  &__modal {
+    position: absolute;
+    border-radius: 20px;
+    width: 270px;
+    background: #fff;
+    z-index: 100;
+    top: 50px;
+    left: 25px;
+
+    margin-bottom: 25px;
+
+    &-title {
+      padding-top: 33px;
+      text-align: center;
+    }
+    &-text {
+      padding-top: 45px;
+      color: #444;
+
+      padding-bottom: 47px;
+      & p {
+        color: #444;
+        padding-top: 10px;
+        padding-bottom: 15px;
+        position: relative;
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: -8px;
+          left: 0px;
+          width: 200px;
+          height: 1px;
+          background: #000;
+          opacity: 0.05;
+        }
+        &::after {
+          top: 61px;
+        }
+      }
+    }
+    &-btn {
+      text-align: center;
+      width: 270px;
+      border-radius: 0 0 20px 20px;
+      background-color: #f3f4f8;
+      color: #1d2e5b;
+      font-family: "Blogger Sans";
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 24px;
+      text-transform: uppercase;
+      padding: 20px;
     }
   }
 }

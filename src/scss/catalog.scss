@@ -119,27 +119,131 @@ body {
   padding-top: 50px;
   padding-bottom: 17px;
   margin-top: -30px;
-  .container {
+  position: relative;
+  &-wrapper {
     @include flexible;
     justify-content: space-between;
+    &__filter {
+      background: url("../img/dest/icons.svg#filter") no-repeat;
+      width: 15px;
+      height: 15px;
+    }
+    &__title {
+      margin-right: 15px;
+    }
+    &__title h4 {
+      color: #192144;
+      line-height: 22px;
+    }
+    &__dots {
+      background: url("../img/dest/icons.svg#dots") no-repeat;
+      width: 17px;
+      height: 17px;
+    }
   }
 
-  &__filter {
-    background: url("../img/dest/icons.svg#filter") no-repeat;
-    width: 15px;
-    height: 15px;
-  }
-  &__title {
-    margin-right: 15px;
-  }
-  &__title h4 {
-    color: #192144;
-    line-height: 22px;
-  }
-  &__dots {
-    background: url("../img/dest/icons.svg#dots") no-repeat;
-    width: 17px;
-    height: 17px;
+  &-list {
+    &-one-row {
+      @include flexible;
+      justify-content: space-between;
+      &__filter {
+        background: url("../img/dest/icons.svg#filter") no-repeat;
+        width: 15px;
+        height: 15px;
+      }
+      &__title {
+        margin-right: 12px;
+      }
+      &__title h4 {
+        color: #192144;
+        line-height: 22px;
+      }
+      &__cross {
+        background: url("../img/dest/icons.svg#filter-close") no-repeat;
+        width: 17px;
+        height: 17px;
+      }
+    }
+    &-continents {
+      margin-top: 37px;
+      margin-bottom: 25px;
+      &__list-continents p {
+        color: #192144;
+        font-family: "Blogger Sans";
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 22px;
+        text-transform: uppercase;
+        margin-left: 6px;
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+          opacity: 0.3;
+          padding-top: 5px;
+        }
+      }
+    }
+    &__list {
+      position: relative;
+
+      &-title {
+        width: 220px;
+        height: 42px;
+        border-radius: 4px 4px 0 0;
+        background-color: #1d2e5b;
+        padding: 11px 0 11px 10px;
+      }
+      &-title h5 {
+        color: #ffffff;
+      }
+      &-abc {
+        table {
+          background: #fff;
+        }
+        position: relative;
+
+        td {
+          border: 1px solid #ccc;
+          padding: 10px;
+          width: 45px;
+          height: 42px;
+          text-align: center;
+          color: #1d2e5b;
+          font-family: "Blogger Sans";
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 18px;
+          text-transform: uppercase;
+          /* Text style for "А" */
+          letter-spacing: 1.4px;
+        }
+        tr:nth-child(1) > td:nth-child(1) {
+          background-color: #1d2e5b;
+          color: #fff;
+        }
+      }
+      &-country {
+        position: relative;
+        height: 228px;
+        width: 220px;
+        color: #444444;
+        padding-top: 18px;
+      }
+    }
+    &__btn {
+      position: relative;
+      background: #d6daed;
+      color: #161c35;
+      &::before {
+        position: absolute;
+        content: "";
+        background: url("../img/dest/icons.svg#filter-close") no-repeat;
+        width: 17px;
+        height: 17px;
+        margin-top: 6px;
+        margin-left: -25px;
+      }
+    }
   }
 }
 
@@ -468,8 +572,6 @@ body {
         width: 100px;
         padding-left: 15px;
 
-        &-name {
-        }
         &-age {
           padding-top: 5px;
           color: #161c35;
@@ -653,6 +755,7 @@ body {
           width: 45px;
           height: 45px;
           position: absolute;
+          margin-right: 20px;
           background: url(../img/dest/level99-catalog.png) no-repeat;
         }
         &-quaantity {
@@ -661,6 +764,7 @@ body {
           font-size: 24px;
           font-weight: 700;
           line-height: 18px;
+          margin-right: 20px;
         }
       }
     }
@@ -671,6 +775,35 @@ body {
     }
   }
 }
+
+/* 1 card */
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(1)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(2)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-thailand") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(1)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(3)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-seychelles") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
 /* 2 карточка */
 
 body
@@ -683,7 +816,208 @@ body
   background: url(../img/dest/demin-mobile@1x.jpg) no-repeat;
 }
 
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(2)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(1)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-belgium") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(2)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(2)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-czech") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+/* 3 карточка */
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(3)
+  > div
+  > div.traveler-collection-card-info
+  > div.traveler-collection-card-info__photo {
+  background: url(../img/dest/smolov-mobile@1x.jpg) no-repeat;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(3)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(1)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-usa") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(3)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(2)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-australia") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(3)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(3)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-dominica") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+/* 4 карточка */
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(4)
+  > div
+  > div.traveler-collection-card-info
+  > div.traveler-collection-card-info__photo {
+  background: url(../img/dest/rogovaya-mobile@1x.jpg) no-repeat;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(4)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(1)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-united-kingdom") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(4)
+  > div
+  > div.traveler-collection-card__flags
+  > div:nth-child(2)
+  > div.traveler-collection-card__flags-group-icon {
+  background: url("../img/dest/icons.svg#flag-german") no-repeat;
+  width: 26px;
+  height: 18px;
+}
+
+body
+  > section.traveler-collection
+  > div
+  > div:nth-child(4)
+  > div
+  > div.traveler-collection-card-info {
+  &::after {
+    position: absolute;
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #81e31e;
+    right: 0;
+    top: 23px;
+  }
+}
+
 /***********    /traveler-collection    ***********/
+
+/***********    more-traveler    ***********/
+
+.more-traveler {
+  background: #edeff6;
+  margin-top: 26px;
+  margin-bottom: 46px;
+  &__btn {
+    color: #1d2e5b;
+    position: relative;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 18px;
+      height: 18px;
+      mask-image: url("../img/dest/icons.svg#show-more-plus");
+      mask-repeat: no-repeat;
+      background: #1d2e5b;
+      margin-left: -25px;
+      margin-top: 5px;
+    }
+  }
+  &-slider {
+    margin-top: 15px;
+    display: flex;
+    &__prev {
+      width: 134px;
+      height: 50px;
+      border-radius: 20px 0 0 20px;
+      background: #fff;
+      border: none;
+      margin-right: 1px;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 18px;
+        height: 18px;
+        mask-image: url("../img/dest/icons.svg#triangle-arrow-left");
+        mask-repeat: no-repeat;
+        background: #1d2e5b;
+        margin-top: -7px;
+        margin-left: -10px;
+      }
+    }
+    &__next {
+      width: 134px;
+      height: 50px;
+      border-radius: 0 20px 20px 0;
+      background: #fff;
+      border: none;
+      position: relative;
+      &::after {
+        position: absolute;
+        content: "";
+        width: 18px;
+        height: 18px;
+        mask-image: url("../img/dest/icons.svg#triangle-arrow-right");
+        mask-repeat: no-repeat;
+        background: #1d2e5b;
+        margin-top: -7px;
+        margin-left: -10px;
+      }
+    }
+  }
+}
+
+/***********    /more-traveler    ***********/
 
 /***********    footer     ***********/
 
@@ -775,3 +1109,11 @@ body
 }
 
 /***********    /footer     ***********/
+
+.launch {
+  display: block;
+}
+
+.none {
+  display: none;
+}

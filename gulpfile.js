@@ -66,7 +66,7 @@ function scripts() {
 
 function styles() {
   return (
-    src("src/scss/catalog.scss")
+    src("src/scss/index.scss")
       .pipe(eval(sass)())
       .pipe(
         autoprefixer({
@@ -88,7 +88,7 @@ function styles() {
           } /* , format: 'beautify' */,
         })
       ) // Минифицируем стили
-      .pipe(concat("catalog.min.css"))
+      .pipe(concat("index.min.css"))
       .pipe(dest("src/css"))
       .pipe(browserSync.stream())
   ); // Сделаем инъекцию в браузер

@@ -357,8 +357,6 @@ body {
     align-items: center;
     padding-top: 26px;
     padding-bottom: 31px;
-    &__title {
-    }
     &__pagination {
       display: flex;
       margin-right: 20px;
@@ -405,8 +403,7 @@ body {
         line-height: 16px;
         text-transform: uppercase;
         letter-spacing: 2.15px;
-        &__title {
-        }
+
         &__people {
           opacity: 0.3;
         }
@@ -452,8 +449,6 @@ body {
         line-height: 16px;
         text-transform: uppercase;
         letter-spacing: 2.15px;
-        &__title {
-        }
         &__days {
           opacity: 0.3;
         }
@@ -545,9 +540,6 @@ body {
         justify-content: center;
         margin-top: 36px;
         font-size: 14px;
-
-        table {
-        }
         &__calendar {
           td {
             border: 1px solid #ccc;
@@ -560,8 +552,6 @@ body {
             font-size: 14px;
             font-weight: 400;
             line-height: 18px;
-          }
-          &-day {
           }
         }
       }

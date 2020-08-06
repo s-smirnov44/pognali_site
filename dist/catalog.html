@@ -24,7 +24,7 @@
         </div>
 
         <nav class="menu">
-          <div class="menu__btn menu__btn-active"></div>
+          <div class="menu__btn"></div>
         </nav>
       </div>
       <div class="description">
@@ -41,31 +41,454 @@
 
   <section class="filter-country">
     <div class="container">
-      <div class="filter-country__filter"> </div>
-    <div class="filter-country__title">
+      <div class="filter-country-wrapper none">
+      <div class="filter-country-wrapper__filter"> </div>
+    <div class="filter-country-wrapper__title">
       <h4>Фильтрация по странам</h4>
     </div>
-    <div class="filter-country__dots"> </div>
+    <div class="filter-country-wrapper__dots"> </div>
   </div>
+
+  <div class="filter-country-list">
+  <div class="filter-country-list-one-row">
+      <div class="filter-country-list-one-row__filter"> </div>
+      <div class="filter-country-list-one-row__title">
+        <h4>Фильтрация по странам</h4>
+      </div>
+      <div class="filter-country-list-one-row__cross"> </div>
+    </div>
+      <div class="filter-country-list-continents ">
+        <div class="container">
+        <div class="filter-country-list-continents__list-continents">
+          <p>европа</p>
+          <p>азия</p>
+          <p>америка</p>
+          <p>острова</p>
+        </div>
+      </div>
+      </div>
+      <div class="container">
+      <div class="filter-country-list__list-abc">
+        <table>
+          <tr>
+            <td>а</td>
+            <td>б</td>
+            <td>в</td>
+            <td>г</td>
+            <td>д</td>
+          </tr>
+          <tr>
+            <td>е</td>
+            <td>ё</td>
+            <td>ж</td>
+            <td>з</td>
+            <td>и</td>
+          </tr>
+          <tr>
+            <td>й</td>
+            <td>к</td>
+            <td>л</td>
+            <td>и</td>
+            <td>н</td>
+          </tr>
+          <tr>
+            <td>о</td>
+            <td>п</td>
+            <td>р</td>
+            <td>с</td>
+            <td>т</td>
+          </tr>
+          <tr>
+            <td>у</td>
+            <td>ф</td>
+            <td>х</td>
+            <td>ц</td>
+            <td>ч</td>
+          </tr>
+          <tr>
+            <td>ш</td>
+            <td>щ</td>
+            <td>э</td>
+            <td>ю</td>
+            <td>я</td>
+          </tr>
+        </table>
+      </div>
+      <div class="filter-country-list__list-country">
+        <p>
+          Афганистан <br />
+          Албания<br />
+          Алгерия<br />
+          Андорра<br />
+          Аргентина<br />
+          Армения<br />
+          Австралия<br />
+          Австрия<br />
+          Азербайджан
+        </p>
+      </div>
+    </div>
+    <button class="btn filter-country-list__btn ">свернуть</button>
+  </div>
+    </div>
   </section>
 
      <!--******************** /filter-country ********************-->
 
      <!--******************** choose-traveler ********************-->
-    <div class="container">
+    <div class="container-mini">
      <section class="choose-traveler">
        <div class="container">
        <div class="choose-traveler__title">
-         <h3>Подберите  идеального 
+         <h3>Подберите  идеального
           попутчика</h3>
        </div>
+
+         <div class="choose-traveler-list-terms">
+           <div class="choose-traveler-list-terms__item">
+             <div class="choose-traveler-list-terms__item-title"><h4>хобби</h4></div>
+           </div>
+            <!-- музыка -->
+           <div class="choose-traveler-list-terms__item">
+            <div class="choose-traveler-list-terms__item-title"><h4>музыка</h4></div>
+            <div class="choose-traveler-list-terms__item-music">
+              <div class="choose-traveler-list-terms__item-music-wrapper">
+              <input
+                class="choose-traveler-list-terms__item-music-wrapper__check"
+                type="checkbox"
+                name="rock"
+                id=""
+                checked
+              />
+              <label class="choose-traveler-list-terms__item-music-wrapper__text" for="rock"
+                >Тяжелый рок</label
+              >
+              </div>
+              <div class="choose-traveler-list-terms__item-music-wrapper">
+              <input
+              class="choose-traveler-list-terms__item-music-wrapper__check"
+              type="checkbox"
+              name="rap"
+              id=""
+            />
+              <label class="choose-traveler-list-terms__item-music-wrapper__text" for="rap"
+              >Русский рэп</label
+            >
+          </div>
+          <div class="choose-traveler-list-terms__item-music-wrapper">
+            <input
+            class="choose-traveler-list-terms__item-music-wrapper__check"
+            type="checkbox"
+            name="dance"
+            id=""
+          />
+            <label class="choose-traveler-list-terms__item-music-wrapper__text" for="dance"
+            >Евродэнс</label
+          >
+        </div>
+            </div>
+            <!-- еда -->
+          </div>
+          <div class="choose-traveler-list-terms__item">
+            <div class="choose-traveler-list-terms__item-title"><h4>еда</h4></div>
+          </div>
+          <div class="choose-traveler-list-terms__item">
+            <div class="choose-traveler-list-terms__item-title"><h4>транспорт</h4></div>
+            <div class="way">
+              <div class="way__plane circle-mini center">
+                <div class="way__plane-icon"></div>
+              </div>
+              <div class="way__bus circle-mini center">
+                <div class="way__bus-icon"></div>
+              </div>
+              <div class="way__bike circle-mini center">
+                <div class="way__bike-icon"></div>
+              </div>
+              <div class="way__run circle-mini center">
+                <div class="way__run-icon"></div>
+              </div>
+            </div>
+          </div>
+          <div class="choose-traveler-list-terms__item">
+            <div class="choose-traveler-list-terms__item-title"><h4>левел</h4></div>
+            <div class="choose-traveler-list-terms__item-level">
+              <div class="choose-traveler-list-terms__item-level-min">30</div>
+              <div class="choose-traveler-list-terms__item-level-max">100</div>
+            </div>
+            <div class="choose-traveler-list-terms__item-scale">
+              <div class="choose-traveler-list-terms__item-scale-min"></div>
+              <div class="choose-traveler-list-terms__item-scale-max"></div>
+            </div>
+          </div>
+         </div>
        <button class="choose-traveler__btn btn">показать</button>
       </div>
      </section>
     </div>
      <!--******************** /choose-traveler ********************-->
 
+     <!--******************** traveler-collection ********************-->
 
+     <section class="traveler-collection">
+       <div class="container">
+         <!-- 1 card -->
+       <div class="traveler-collection-card">
+         <div class="container">
+          <div class="traveler-collection-card-info">
+         <div class="traveler-collection-card-info__photo">
+          <div class="traveler-collection-card-info__photo-like circle-mini light-pink">
+            <div class="traveler-collection-card-info__photo-like-icon"></div>
+          </div>
+         </div>
+         <div class="traveler-collection-card-info__title">
+          <div class="traveler-collection-card_-info_title-name"><h3>Таня
+            Фирсова</h3></div>
+          <div class="traveler-collection-card-info__title-age"> 1,5 M</div>
+         </div>
+        </div>
+         <div class="traveler-collection-card__tags"><p>#ЗОЖ #ПП #Фитнес #пляж
+          #авокадо #смузи</p></div>
+         <div class="traveler-collection-card__wish"><p>хочет посетить:</p> </div>
+         <div class="traveler-collection-card__flags">
+           <div class="traveler-collection-card__flags-group">
+             <div class="traveler-collection-card__flags-group-icon"></div>
+             <div class="traveler-collection-card__flags-group-title">Шри ланка</div>
+            </div>
+            <div class="traveler-collection-card__flags-group">
+              <div class="traveler-collection-card__flags-group-icon"></div>
+              <div class="traveler-collection-card__flags-group-title">Тайланд</div>
+             </div>
+             <div class="traveler-collection-card__flags-group">
+              <div class="traveler-collection-card__flags-group-icon"></div>
+              <div class="traveler-collection-card__flags-group-title">Сейшелы</div>
+             </div>
+         </div>
+         <div class="traveler-collection-card__text">
+           <p>траспорт:</p>
+           <p>левел:</p>
+           <div class="traveler-collection-card__text-line"></div>
+         </div>
+         <div class="traveler-collection-card__icons">
+           <div class="traveler-collection-card__icons-way">
+            <div class="way">
+              <div class="way__plane circle-mini light-gray center">
+                <div class="way__plane-icon"></div>
+              </div>
+              <div class="way__bus circle-mini light-gray center">
+                <div class="way__bus-icon"></div>
+              </div>
+              <div class="way__bike circle-mini light-gray center">
+                <div class="way__bike-icon"></div>
+              </div>
+              <div class="way__run circle-mini light-gray center">
+                <div class="way__run-icon"></div>
+              </div>
+            </div>
+           </div>
+           <div class="traveler-collection-card__icons-level">
+             <div class="traveler-collection-card__icons-level-scale"></div>
+             <div class="traveler-collection-card__icons-level-quaantity">99</div>
+           </div>
+         </div>
+         <button class="traveler-collection-card__btn btn">позвать!</button>
+        </div>
+       </div>
+       <!-- 2 card -->
+       <div class="traveler-collection-card">
+        <div class="container">
+         <div class="traveler-collection-card-info">
+        <div class="traveler-collection-card-info__photo">
+         <div class="traveler-collection-card-info__photo-like circle-mini light-pink">
+           <div class="traveler-collection-card-info__photo-like-icon"></div>
+         </div>
+        </div>
+        <div class="traveler-collection-card-info__title">
+         <div class="traveler-collection-card_-info_title-name"><h3>Петя
+          Демин</h3></div>
+         <div class="traveler-collection-card-info__title-age"> 150</div>
+        </div>
+       </div>
+        <div class="traveler-collection-card__tags"><p>#бургер #бар #футбол
+          #концерт #крафт</p></div>
+        <div class="traveler-collection-card__wish"><p>хочет посетить:</p> </div>
+        <div class="traveler-collection-card__flags">
+          <div class="traveler-collection-card__flags-group">
+            <div class="traveler-collection-card__flags-group-icon"></div>
+            <div class="traveler-collection-card__flags-group-title">Бельгия</div>
+           </div>
+           <div class="traveler-collection-card__flags-group">
+             <div class="traveler-collection-card__flags-group-icon"></div>
+             <div class="traveler-collection-card__flags-group-title">Чехия</div>
+            </div>
+        </div>
+        <div class="traveler-collection-card__text">
+          <p>траспорт:</p>
+          <p>левел:</p>
+          <div class="traveler-collection-card__text-line"></div>
+        </div>
+        <div class="traveler-collection-card__icons">
+          <div class="traveler-collection-card__icons-way">
+           <div class="way">
+             <div class="way__plane circle-mini light-gray center">
+               <div class="way__plane-icon"></div>
+             </div>
+             <div class="way__bus circle-mini light-gray center">
+               <div class="way__bus-icon"></div>
+             </div>
+             <div class="way__bike circle-mini light-gray center">
+               <div class="way__bike-icon"></div>
+             </div>
+             <div class="way__run circle-mini light-gray center">
+               <div class="way__run-icon"></div>
+             </div>
+           </div>
+          </div>
+          <div class="traveler-collection-card__icons-level">
+            <div class="traveler-collection-card__icons-level-scale"></div>
+            <div class="traveler-collection-card__icons-level-quaantity">80</div>
+          </div>
+        </div>
+        <button class="traveler-collection-card__btn btn">позвать!</button>
+       </div>
+      </div>
+      <!-- 3 card -->
+      <div class="traveler-collection-card">
+        <div class="container">
+         <div class="traveler-collection-card-info">
+        <div class="traveler-collection-card-info__photo">
+         <div class="traveler-collection-card-info__photo-like circle-mini light-pink">
+           <div class="traveler-collection-card-info__photo-like-icon"></div>
+         </div>
+        </div>
+        <div class="traveler-collection-card-info__title">
+         <div class="traveler-collection-card_-info_title-name"><h3>Марк
+          Смолов</h3></div>
+         <div class="traveler-collection-card-info__title-age">1700</div>
+        </div>
+       </div>
+        <div class="traveler-collection-card__tags"><p>#рэп #тату #хайпбист 
+          #кроссовки #суприм</p></div>
+        <div class="traveler-collection-card__wish"><p>хочет посетить:</p> </div>
+        <div class="traveler-collection-card__flags">
+          <div class="traveler-collection-card__flags-group">
+            <div class="traveler-collection-card__flags-group-icon"></div>
+            <div class="traveler-collection-card__flags-group-title">сша</div>
+           </div>
+           <div class="traveler-collection-card__flags-group">
+             <div class="traveler-collection-card__flags-group-icon"></div>
+             <div class="traveler-collection-card__flags-group-title">австралия</div>
+            </div>
+            <div class="traveler-collection-card__flags-group">
+             <div class="traveler-collection-card__flags-group-icon"></div>
+             <div class="traveler-collection-card__flags-group-title">доминикана</div>
+            </div>
+        </div>
+        <div class="traveler-collection-card__text">
+          <p>траспорт:</p>
+          <p>левел:</p>
+          <div class="traveler-collection-card__text-line"></div>
+        </div>
+        <div class="traveler-collection-card__icons">
+          <div class="traveler-collection-card__icons-way">
+           <div class="way">
+             <div class="way__plane circle-mini light-gray center">
+               <div class="way__plane-icon"></div>
+             </div>
+             <div class="way__bus circle-mini light-gray center">
+               <div class="way__bus-icon"></div>
+             </div>
+             <div class="way__bike circle-mini light-gray center">
+               <div class="way__bike-icon"></div>
+             </div>
+             <div class="way__run circle-mini light-gray center">
+               <div class="way__run-icon"></div>
+             </div>
+           </div>
+          </div>
+          <div class="traveler-collection-card__icons-level">
+            <div class="traveler-collection-card__icons-level-scale"></div>
+            <div class="traveler-collection-card__icons-level-quaantity">25</div>
+          </div>
+        </div>
+        <button class="traveler-collection-card__btn btn">позвать!</button>
+       </div>
+      </div>
+      <!-- 4 card -->
+      <div class="traveler-collection-card">
+        <div class="container">
+         <div class="traveler-collection-card-info">
+        <div class="traveler-collection-card-info__photo">
+         <div class="traveler-collection-card-info__photo-like circle-mini light-pink">
+           <div class="traveler-collection-card-info__photo-like-icon"></div>
+         </div>
+        </div>
+        <div class="traveler-collection-card-info__title">
+         <div class="traveler-collection-card_-info_title-name"><h3>Лариса
+          Роговая</h3></div>
+         <div class="traveler-collection-card-info__title-age">23</div>
+        </div>
+       </div>
+        <div class="traveler-collection-card__tags"><p>#образование #карьера
+          #учеба #линкедин</p></div>
+        <div class="traveler-collection-card__wish"><p>хочет посетить:</p> </div>
+        <div class="traveler-collection-card__flags">
+          <div class="traveler-collection-card__flags-group">
+            <div class="traveler-collection-card__flags-group-icon"></div>
+            <div class="traveler-collection-card__flags-group-title">Великобритания</div>
+           </div>
+           <div class="traveler-collection-card__flags-group">
+             <div class="traveler-collection-card__flags-group-icon"></div>
+             <div class="traveler-collection-card__flags-group-title">Германия</div>
+            </div>
+        </div>
+        <div class="traveler-collection-card__text">
+          <p>траспорт:</p>
+          <p>левел:</p>
+          <div class="traveler-collection-card__text-line"></div>
+        </div>
+        <div class="traveler-collection-card__icons">
+          <div class="traveler-collection-card__icons-way">
+           <div class="way">
+             <div class="way__plane circle-mini light-gray center">
+               <div class="way__plane-icon"></div>
+             </div>
+             <div class="way__bus circle-mini light-gray center">
+               <div class="way__bus-icon"></div>
+             </div>
+             <div class="way__bike circle-mini light-gray center">
+               <div class="way__bike-icon"></div>
+             </div>
+             <div class="way__run circle-mini light-gray center">
+               <div class="way__run-icon"></div>
+             </div>
+           </div>
+          </div>
+          <div class="traveler-collection-card__icons-level">
+            <div class="traveler-collection-card__icons-level-scale"></div>
+            <div class="traveler-collection-card__icons-level-quaantity">50</div>
+          </div>
+        </div>
+        <button class="traveler-collection-card__btn btn">позвать!</button>
+       </div>
+      </div>
+      </div>
+     </section>
+
+     <!--******************** /traveler-collection ********************-->
+
+      <!--******************** more-traveler ********************-->
+
+     <section class="more-traveler">
+       <div class="container">
+       <button class="more-traveler__btn btn">Показать еще</button>
+       <div class="more-traveler-slider">
+         <button class="more-traveler-slider__prev"></button>
+         <button class="more-traveler-slider__next"></button>
+       </div>
+      </div>
+     </section>
+
+     <!--******************** /more-traveler ********************-->
 
          <!--******************** footer ********************-->
 
