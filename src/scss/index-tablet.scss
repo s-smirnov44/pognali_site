@@ -1,0 +1,707 @@
+@media (min-width: 768px) {
+  h3 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 45px;
+  }
+  p {
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 33px;
+  }
+  .circle-middle {
+    width: 60px;
+    height: 60px;
+  }
+  .header {
+    background: url("../img/dest/globe-back-tablet@2x.jpg") no-repeat;
+    background-size: cover;
+    min-width: 768px;
+    height: auto;
+    position: relative;
+    .container {
+      position: relative;
+      padding: 0 40px;
+    }
+    &__inner {
+      .logo {
+        padding-top: 45px;
+      }
+      .menu {
+        margin: 0 auto;
+        padding-right: 160px;
+        padding-top: 61px;
+      }
+    }
+    .description {
+      position: relative;
+      margin: 0 auto;
+      width: 400px;
+      margin-top: 98px;
+      &__title {
+        font-size: 60px;
+        line-height: 70px;
+      }
+    }
+    .traveller {
+      background: url("../img/dest/traveller-illustration-tablet@1x.png");
+      width: 372px;
+      height: 451px;
+      margin-left: 315px;
+    }
+  }
+
+  .delight {
+    min-width: 768px;
+    height: auto;
+    position: relative;
+    .citation {
+      position: absolute;
+      top: -400px;
+      left: 30px;
+      &__text p {
+        font-size: 28px;
+        font-weight: 300;
+        line-height: 33px;
+        width: 280px;
+      }
+      &__autor p {
+        font-size: 21px;
+        font-weight: 700;
+        line-height: 25px;
+        width: 220px;
+      }
+    }
+    .connection {
+      .connection__phone.circle.orange,
+      .connection__mail.circle.yellow,
+      &__phone-icon,
+      &__mail-icon {
+        display: none;
+      }
+
+      &__autorization {
+        position: absolute;
+        top: -790px;
+        right: -700px;
+      }
+    }
+  }
+  .about {
+    min-width: 768px;
+    height: auto;
+    background: #192144;
+    background-position: right;
+    border-radius: 0 0 60px 60px;
+    min-width: 768px;
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 10;
+    &:before {
+      position: absolute;
+      content: "";
+      background: url("../img/dest/about-tablet@1x.webp") no-repeat;
+      width: 376px;
+      height: 548px;
+      top: 380px;
+      right: 0;
+      z-index: 100;
+    }
+
+    .choice {
+      margin-top: 2px;
+      width: 708px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      &__card {
+        margin-top: -10px;
+        width: 344px;
+        position: relative;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        padding: 5px;
+        height: 140px;
+        &:nth-child(1),
+        &:nth-child(3) {
+          width: 380px;
+          border-radius: 20px 20px 0 0;
+        }
+        &:nth-child(3) {
+          border-radius: 0 0 20px 20px;
+        }
+
+        &:nth-child(2),
+        &:nth-child(4) {
+          margin-left: -40px;
+          border-radius: 0 0 20px 20px;
+        }
+        &:nth-child(2) {
+          border-radius: 20px 20px 0 0;
+        }
+        &-text {
+          &:nth-child(1) {
+            width: 230px;
+          }
+          padding-top: 31px;
+          padding-left: 34px;
+          padding-bottom: 62px;
+          width: 200px;
+        }
+        &-number {
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 142px;
+          top: 35px;
+          left: 35px;
+        }
+      }
+    }
+    .about &__description {
+      padding-top: 360px;
+      padding-top: -30px;
+      position: relative;
+      z-index: 5;
+      &:before {
+        position: absolute;
+        content: "";
+        z-index: -5;
+        width: 688px;
+        height: 213px;
+        border-radius: 20px;
+        background-color: #141b3b;
+        top: 328px;
+        left: -25px;
+      }
+      &-title h3 {
+        font-size: 45px;
+        font-weight: 700;
+        line-height: 45px;
+      }
+      &-text p {
+        &:nth-child(1) {
+          width: 300px;
+          font-size: 28px;
+          font-weight: 300;
+          line-height: 33px;
+        }
+        &:nth-child(2) {
+          width: 310px;
+          font-size: 21px;
+          font-weight: 700;
+          line-height: 25px;
+        }
+      }
+      &-btn {
+        display: block;
+        width: 274px;
+        height: 81px;
+        border-radius: 20px;
+        background-color: #ffd74b;
+        margin-left: 50px;
+        padding: 0;
+        padding-right: 75px;
+        color: #1d2e5b;
+        font-family: "Blogger Sans";
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+        &::after {
+          top: 30px;
+          width: 20px;
+        }
+      }
+    }
+  }
+
+  .route {
+    z-index: 11;
+    min-width: 768px;
+    position: relative;
+    &:before {
+      position: absolute;
+      content: "";
+      background: url("../img/dest/flags-back@1x.png");
+      width: 289px;
+      height: 575px;
+      top: 130px;
+      right: 40px;
+    }
+
+    &__descriptrion {
+      padding-top: 72px;
+      margin: 0;
+      padding-left: 75px;
+      width: 193px;
+      &-title {
+        margin-bottom: 62px;
+        h3 {
+          font-size: 45px;
+          font-weight: 700;
+          line-height: 45px;
+        }
+      }
+      &-text {
+        padding-bottom: 66px;
+        color: #444444;
+        p {
+          font-size: 28px;
+          font-weight: 300;
+          line-height: 33px;
+          width: 340px;
+        }
+      }
+    }
+
+    .tours {
+      margin-top: 50px;
+      width: 618px;
+      border-radius: 20px;
+      position: relative;
+      z-index: 4;
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        width: 141px;
+        height: 141px;
+        top: -35px;
+        left: -35px;
+        border-radius: 20px;
+        background-color: #e2e5f2;
+      }
+      .card {
+        position: relative;
+        z-index: 4;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        &:nth-child(1) > div.card-background-inner {
+          background: url("../img/dest/thailand-desktop@1x.webp") no-repeat;
+        }
+        &:nth-child(2) > div.card-background-inner {
+          background: url("../img/dest/france-desktop@1x.webp") no-repeat;
+        }
+        &:nth-child(3) > div.card-background-inner {
+          background: url("../img/dest/czech-desktop@1x.webp") no-repeat;
+          box-shadow: inset 0 -74px 26px -26px rgb(237, 239, 246);
+        }
+        & > div.card-background-inner {
+          position: absolute;
+          z-index: 5;
+          width: 186px;
+          height: 140px;
+          width: 180px;
+          right: 0;
+          border-radius: 0px 20px 20px 0px;
+        }
+        &-info {
+          > div.card-info__score {
+            left: 45px;
+            top: 100px;
+            &::before {
+              width: 18px;
+              height: 18px;
+              top: 3px;
+            }
+            p {
+              font-size: 20px;
+            }
+          }
+          height: 140px;
+          border-radius: 20px;
+
+          > div.card-info__flag {
+            width: 70px;
+            height: 47px;
+            left: 410px;
+            top: 16px;
+            z-index: 5;
+          }
+
+          &__title h4 {
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 24px;
+          }
+          &__text {
+            padding-top: 6px;
+            p {
+              font-size: 20px;
+              font-weight: 500;
+              line-height: 17.68px;
+            }
+          }
+        }
+      }
+    }
+    .route__btn {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+      margin-top: 47px;
+      margin-bottom: 30px;
+      width: 618px;
+
+      &::after {
+        width: 20px;
+      }
+    }
+  }
+  .travelers {
+    min-width: 768px;
+    border-radius: 0 0 60px 60px;
+    &__description {
+      margin: 0;
+      margin-left: 76px;
+      margin-top: 143px;
+      width: 423px;
+      &::before {
+        width: 213px;
+        height: 213px;
+        left: -40px;
+      }
+      &::after {
+        width: 143px;
+        height: 143px;
+        top: 370px;
+        left: -30px;
+        z-index: 2;
+      }
+      &-title {
+      }
+      &-text {
+        p {
+          &:nth-child(1) {
+            width: 425px;
+          }
+          &:nth-child(2) {
+            width: 350px;
+          }
+        }
+      }
+    }
+
+    .companion {
+      display: flex;
+      justify-content: center;
+    }
+    .companion > div:nth-child(2) {
+      margin-left: 48px;
+    }
+    .companion .companion-card:nth-child(1)::before {
+      width: 285px;
+      height: 285px;
+      top: -370px;
+      left: 170px;
+    }
+    .companion .companion-card-image__photo {
+      width: 285px;
+      height: 285px;
+      z-index: 4;
+      position: relative;
+    }
+    .companion div.companion-card-info div.companion-card-info__flag {
+      z-index: 20;
+    }
+
+    .companion .companion-card-info {
+      width: 285px;
+    }
+    &__btn {
+      width: 618px;
+      margin: 0 auto;
+      margin-bottom: 48px;
+    }
+
+    .companion .companion-card-info__wrapper-name {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 24px;
+    }
+    .companion .companion-card-info__tag p {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+      width: 250px;
+    }
+  }
+
+  .tariff {
+    padding-top: 70px;
+    min-width: 768px;
+    position: relative;
+    z-index: 8;
+    .collection {
+      position: relative;
+      margin-bottom: 70px;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 198px;
+        height: 285px;
+        border-radius: 20px;
+        background-color: #e2e5f2;
+        right: 20px;
+        top: 0;
+      }
+      .option {
+        &::before {
+          width: 550px;
+          left: 100px;
+        }
+        &::after {
+          top: 60px;
+          width: 550px;
+          left: 100px;
+        }
+        display: flex;
+        justify-content: space-between;
+        &__number {
+          width: 67px;
+          height: 67px;
+          font-size: 28px;
+          font-weight: 400;
+          line-height: 28px;
+          left: 0;
+        }
+        &__title,
+        &__price {
+          font-size: 28px;
+          font-weight: 300;
+          line-height: 33px;
+          margin-top: 15px;
+        }
+        &__title {
+          margin-left: 100px;
+        }
+        &__price {
+          margin-right: 50px;
+        }
+      }
+    }
+    .create-profil {
+      text-align: center;
+      margin-left: 100px;
+      &__title {
+        h3 {
+          width: 489px;
+          margin-bottom: 40px;
+        }
+      }
+      &__image {
+        position: absolute;
+        right: 86px;
+        bottom: 46px;
+        z-index: 5;
+      }
+    }
+    &__more {
+      a {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 20px;
+      }
+      @include flexible;
+      justify-content: start;
+      &-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        margin-right: 20px;
+        &-circle {
+          width: 67px;
+          height: 67px;
+          background-color: #e2e5f2;
+          border-radius: 50%;
+        }
+        &-man {
+          mask-image: url("../img/dest/icons.svg#business");
+          width: 22px;
+          height: 22px;
+          background-color: #132576;
+          mask-repeat: no-repeat;
+          position: absolute;
+        }
+      }
+    }
+  }
+  .form {
+    margin-top: -50px;
+    padding-top: 50px;
+    position: relative;
+    z-index: 5;
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__description {
+      &-mobile {
+        display: none;
+      }
+      &-tablet {
+        display: block;
+        width: 606px;
+        margin-left: 100px;
+        margin-bottom: 30px;
+      }
+    }
+    &__mail {
+      margin-bottom: 30px;
+      position: relative;
+      &-input {
+        width: 536px;
+      }
+      &-button {
+        margin-left: 474px;
+        margin: right;
+      }
+    }
+    &__text {
+      &-mobile {
+        display: none;
+      }
+      &-tablet {
+        display: block;
+      }
+    }
+    &__contacts {
+      margin: 0;
+      width: 768px;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 28px;
+      margin-left: 80px;
+      padding-bottom: 84px;
+      padding-top: 46px;
+      &-phone {
+        display: flex;
+        justify-content: start;
+        margin-bottom: 20px;
+        padding-top: 20px;
+        &-background {
+          width: 68px;
+          height: 68px;
+        }
+        &-icon {
+          width: 27px;
+          height: 27px;
+          margin-top: 8px;
+          margin-left: 22px;
+        }
+        &-number {
+          margin-left: 45px;
+          margin-top: 8px;
+        }
+      }
+      &-mail {
+        display: flex;
+        justify-content: start;
+        &-background {
+          width: 68px;
+          height: 68px;
+        }
+        &-icon {
+          width: 27px;
+          height: 27px;
+          margin-top: 8px;
+          margin-left: 22px;
+        }
+        &-value {
+          margin-left: 45px;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+  .geolocation {
+    justify-content: start;
+    .address {
+      margin-top: 48px;
+      margin-bottom: 20px;
+      position: relative;
+      &__background {
+        width: 68px;
+        height: 68px;
+        left: -15px;
+        top: -15px;
+      }
+      &__icon {
+        width: 44px;
+        height: 72px;
+        margin-top: 35px;
+        margin-left: -3px;
+      }
+      &__text {
+        p {
+          width: auto;
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 28px;
+          text-transform: uppercase;
+          margin-left: 30px;
+        }
+      }
+    }
+    &__btn {
+      width: max($numbers: 618px);
+    }
+  }
+  .map {
+    width: 768px;
+    &__image {
+      background: url("../img/dest/map-tablet@1x.jpg");
+      width: 768px;
+    }
+    &__geo {
+      position: absolute;
+      background: url("../img/dest/icons.svg#map-marker") no-repeat;
+      width: 54px;
+      height: 54px;
+      top: 270px;
+      left: 350px;
+    }
+  }
+  .footer {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 0;
+    width: 768px;
+    margin: 0 auto;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      margin-right: 20px;
+      margin-left: -20px;
+
+      .logotype {
+        width: 164px;
+        height: 42px;
+      }
+      .social {
+        &__inst-icon,
+        &__vk-icon,
+        &__fb-icon {
+          width: 27px;
+          height: 27px;
+        }
+        margin-right: 80px;
+      }
+      .creator {
+        margin-top: 15px;
+        &::before {
+          display: none;
+        }
+        p {
+          font-size: 20px;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

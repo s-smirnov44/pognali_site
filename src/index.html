@@ -14,11 +14,11 @@
         <div class="header__inner">
           <div class="logo">
             <a class="logo__link" href="#">
-              <img
-                class="logo__link-img"
-                src="img/dest/logo-mobile-white@1x.png"
-                alt=""
-              />
+              <picture>
+                <source srcset="img/dest/logo-mobile-white@1x.png" media="(max-width: 767px)">
+                <source srcset="img/dest/logo-tablet-white@1x.png" media="(min-width: 768px)">
+                <img src="" alt="">
+               </picture>
             </a>
           </div>
 
@@ -142,6 +142,7 @@
           </p>
         </div>
       </div>
+      <button class="about__description-btn btn">Подробнее</button>
     </section>
 
     <!--******************** /about ********************-->
@@ -300,8 +301,9 @@
             </div>
           </div>
         </div>
-        <button class="travelers__btn btn">Показать всех</button>
+        
       </div>
+      <button class="travelers__btn btn">Показать всех</button>
     </section>
 
     <!--******************** /travelers ********************-->
@@ -330,10 +332,15 @@
         </div>
       </div>
       <div class="tariff__more">
+        <div class="tariff__more-icon">
+          <div class="tariff__more-icon-circle"></div>
+          <div class="tariff__more-icon-man"></div>
+        </div>
         <a href="">Показать тарифы для бизнеса</a>
       </div>
 
-      <div class="tariff__modal">
+
+      <div class="tariff__modal none">
         <div class="container">
         <div class="tariff__modal-title"><h3>Бизнес-тарифы</h3></div>
         <div class="tariff__modal-text"> 
@@ -359,9 +366,14 @@
     <section class="form">
       <div class="form__title"><h3>Заинтересовались?</h3></div>
       <div class="form__description">
-        <p>
+        <p class="form__description-mobile">
           Зарегистрируйтесь, <br />
           это быстро и бесплатно! <br />Уже зарегистрированы? Тогда <br />скорее
+          <a href="#">авторизуйтесь.</a>
+        </p>
+        <p class="form__description-tablet">
+          Зарегистрируйтесь,
+          это быстро и бесплатно! Уже зарегистрированы? Тогда скорее
           <a href="#">авторизуйтесь.</a>
         </p>
       </div>
@@ -371,7 +383,8 @@
       </form>
       </div>
       <div class="form__text">
-        <p>Остались вопросы? <br />Мы с радостью на них ответим!</p>
+        <p class="form__text-mobile">Остались вопросы? <br />Мы с радостью на них ответим!</p>
+        <p class="form__text-tablet">Остались вопросы? Мы с радостью на них ответим!</p>
       </div>
       <div class="form__contacts">
         <div class="form__contacts-phone">
@@ -418,7 +431,15 @@
 
         <div class="footer">
           <div class="container">
-            <div class="logotype"></div>
+            <div class="logotype">
+              <a class="logotype__link" href="#">
+                <picture>
+                  <source srcset="img/dest/logo-mobile-blue@1x.png" media="(max-width: 767px)">
+                  <source srcset="img/dest/logo-tablet-blue@1x.png" media="(min-width: 768px)">
+                  <img src="" alt="">
+                 </picture>
+              </a>
+            </div>
             <div class="social">
               <div class="social__fb circle-middle ">
                 <div class="social__fb-icon"></div>

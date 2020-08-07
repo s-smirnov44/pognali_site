@@ -4,7 +4,7 @@
 @include reset;
 
 body {
-  min-width: 320px;
+  min-min-width: 320px;
   overflow-x: hidden;
 }
 
@@ -86,10 +86,11 @@ p {
 
 .header {
   margin: 0 auto;
-  width: 320px;
+  min-width: 320px;
   background: url("../img/dest/globe-back-mobile@1x.jpg") no-repeat;
   position: relative;
   z-index: 9;
+
   &__inner {
     min-height: 100%;
     display: flex;
@@ -152,7 +153,7 @@ p {
   left: 0;
   position: absolute;
   background: #fff;
-  width: 320px;
+  min-width: 320px;
   z-index: 990;
   min-height: 100%;
 
@@ -204,7 +205,7 @@ p {
     margin-top: 58px;
   }
   &-contacts {
-    width: 320px;
+    min-width: 320px;
     display: block;
     color: #192144;
 
@@ -302,7 +303,7 @@ p {
 /***********    delight     ***********/
 
 .delight {
-  width: 320px;
+  min-width: 320px;
   margin: 0 auto;
   background: #0c0f1f;
   position: relative;
@@ -381,7 +382,7 @@ p {
   border-radius: 0 0 30px 30px;
   display: block;
   margin: 0 auto;
-  width: 320px;
+  min-width: 320px;
   z-index: 12;
   position: relative;
 
@@ -464,6 +465,9 @@ p {
       font-weight: 700;
       width: 204px;
     }
+    &-btn {
+      display: none;
+    }
   }
 }
 
@@ -479,6 +483,8 @@ p {
   z-index: 11;
   margin-top: -50px;
   padding-top: 50px;
+  min-width: 320px;
+  margin: 0 auto;
   &__descriptrion {
     padding-top: 72px;
     margin: 0 auto;
@@ -548,7 +554,6 @@ p {
           width: 13px;
           height: 13px;
           background: url("../img/dest/icons.svg#user") no-repeat;
-          background-color: #192144;
           opacity: 0.5;
         }
         &__flag {
@@ -564,13 +569,13 @@ p {
       }
       // Фото на карточке
       &:nth-child(1) > div.card-background-inner {
-        background: url("../img/dest/thailand-mobile@1x.jpg");
+        background: url("../img/dest/thailand-mobile@1x.jpg") no-repeat;
       }
       &:nth-child(2) > div.card-background-inner {
-        background: url("../img/dest/france-mobile@1x.jpg");
+        background: url("../img/dest/france-mobile@1x.jpg") no-repeat;
       }
       &:nth-child(3) > div.card-background-inner {
-        background: url("../img/dest/czech-mobile@1x.jpg");
+        background: url("../img/dest/czech-mobile@1x.jpg") no-repeat;
       }
       // Флаги на карточке
       &:nth-child(1) > .card-info > .card-info__flag {
@@ -601,6 +606,8 @@ p {
 /***********    travelers     ***********/
 
 .travelers {
+  margin: 0 auto;
+  min-width: 320px;
   border-radius: 0 0 30px 30px;
   background-color: #192144;
   padding-bottom: 30px;
@@ -608,7 +615,7 @@ p {
   z-index: 10;
   margin-top: -50px;
   padding-top: 50px;
-  .travelers__description {
+  &__description {
     width: 180px;
     display: block;
     padding-top: 60px;
@@ -672,7 +679,8 @@ p {
       padding-bottom: 10px;
       &:nth-child(1)::before {
         content: "";
-        background: url("../img/dest/rogovaya-back-mobile@1x.png");
+        background: url("../img/dest/rogovaya-back-desktop@1x.png") no-repeat;
+        background-size: cover;
         position: absolute;
         top: -30px;
         left: -37px;
@@ -942,6 +950,7 @@ p {
   }
   .travelers__btn {
     background: #ffd74b;
+    margin: 0 auto;
     margin-top: 16px;
   }
 }
@@ -952,8 +961,8 @@ p {
 .tariff {
   border-radius: 0 0 30px 30px;
   background-color: #edeff6;
-  width: 320px;
   margin: 0 auto;
+  min-width: 320px;
   padding-left: 50px;
   padding-right: 26px;
   position: relative;
@@ -1027,8 +1036,10 @@ p {
   }
 
   &__more {
-    padding-top: 45px;
     padding-bottom: 38px;
+    &-icon {
+      display: none;
+    }
     & a {
       color: #192144;
       font-size: 16px;
@@ -1099,17 +1110,23 @@ p {
 .form {
   border-radius: 0 0 30px 30px;
   background-color: #192144;
+  margin: 0 auto;
+  min-width: 320px;
   text-align: center;
   position: relative;
   z-index: 8;
   margin-top: -50px;
   padding-top: 50px;
+
   &__title {
     padding-top: 72px;
   }
   &__description {
     padding-top: 23px;
     padding-bottom: 32px;
+    &-tablet {
+      display: none;
+    }
   }
   &__description p {
     color: #fff;
@@ -1134,6 +1151,7 @@ p {
         font-weight: 700;
         line-height: 18px;
         padding-left: 24px;
+        opacity: 0.3;
       }
     }
     &-button {
@@ -1160,9 +1178,12 @@ p {
     color: #fff;
     padding-top: 32px;
     padding-bottom: 36px;
+    &-tablet {
+      display: none;
+    }
   }
   &__contacts {
-    width: 320px;
+    min-width: 320px;
     margin: 0 auto;
     display: block;
     color: #ffd74b;
@@ -1289,11 +1310,11 @@ p {
   z-index: 5;
   margin: 0 auto;
   margin-top: -40px;
-  width: 320px;
+  min-width: 320px;
 
   &__image {
-    background: url("../img/dest/map-mobile@1x.jpg");
-    width: 320px;
+    background: url("../img/dest/map-mobile@1x.jpg") no-repeat;
+    min-width: 320px;
     height: 546px;
   }
   &__geo {
@@ -1310,7 +1331,7 @@ p {
 /***********    footer     ***********/
 
 .footer {
-  width: 320px;
+  min-width: 320px;
   margin: 0 auto;
   position: relative;
   z-index: 8;
@@ -1324,7 +1345,6 @@ p {
     flex-direction: column;
     padding-top: 38px;
     .logotype {
-      background: url("../img/dest/logo-mobile-blue@1x.png") no-repeat;
       width: 100px;
       height: 15px;
       padding-bottom: 41px;
@@ -1404,3 +1424,5 @@ p {
 }
 
 /***********    /footer     ***********/
+
+@import "index-tablet.scss";
