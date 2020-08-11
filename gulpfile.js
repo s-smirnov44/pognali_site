@@ -34,28 +34,18 @@ function browsersync() {
 
 function html() {
   // работа с html
-  return (
-    src("src/**.html")
-      .pipe(
-        include({
-          prefix: "@@", // для многостраничника (подключать модули в старницы типа @@include footer)
-        })
-      )
-      // .pipe(webphtml())
-      // .pipe(
-      //   htmlmin({
-      //     // минифицируем все html
-      //     collapseWhitespace: true,
-      //   })
-      // )
-      .pipe(dest("dist"))
-  );
+  return src("src/**.html")
+    .pipe(
+      include({
+        prefix: "@@", // для многостраничника (подключать модули в старницы типа @@include footer)
+      })
+    )
+    .pipe(dest("dist"));
 }
 
 function scripts() {
   return src([
     // Берём файлы из источников
-
     "src/js/main.js", // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
   ])
     .pipe(concat("master.min.js")) // Конкатенируем в один файл
@@ -98,16 +88,6 @@ function images() {
   return (
     src("src/img/src/**/*") // Берём все изображения из папки источника
       .pipe(newer("src/img/dest/")) // Проверяем, было ли изменено (сжато) изображение ранее, чтобы покругу не сжимать
-      // .pipe(src("src/img/src/**/*"))
-      // .pipe(
-      //   webp({
-      //     quality: [0.6, 0.7],
-      //     lossless: true,
-      //   }),
-      // )
-      // .pipe(dest("src/img/dest/"))
-      // .pipe(src("src/img/src/**/*"))
-      // .pipe(newer("src/img/dest/"))
       .pipe(
         imagemin([
           imgCompress({
@@ -179,30 +159,6 @@ function startwatch() {
       )
       .pipe(dest("src/fonts/"));
   });
-
-  //   function fontsStyle(params, done) { // добавляет шрифты в fonts.scss
-
-  //     let file_content = fs.readFileSync('src/scss/fonts.scss');
-  //     if (file_content == '') {
-  //       fs.writeFile('src/scss/fonts.scss', '', cb);
-  //       return fs.readdir('src/fonts', function (items) {
-  //         if (items) {
-  //           let c_fontname;
-  //           for (var i = 0; i < items.length; i++) {
-  //             let fontname = items[i].split('.');
-  //             fontname = fontname[0];
-  //             if (c_fontname != fontname) {
-  //               fs.appendFile('src/scss/fonts.scss', '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n', cb);
-  //             }
-  //             c_fontname = fontname;
-  //           }
-  //         }
-  //       })
-  //     }
-  //     done()
-  //   }
-
-  //   function cb() { }
 }
 
 //cпрайты || sprites
